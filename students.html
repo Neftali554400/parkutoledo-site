@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Parking — ParkUToledo</title>
+  <meta name="description" content="Student parking permit options at The University of Toledo. Purchase semester and daily permits through the parking portal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { 'ut-blue':'#15397F','ut-gold':'#FFDA00','ut-dark':'#0D2352','ut-accent':'#005CB9','ut-gray-light':'#BEC6C3','ut-gray-mid':'#A0ACAA','ut-text':'#1A1A1A','ut-bg-light':'#F5F6F8','ut-footer-bar':'#091A3A' }, fontFamily: { poppins: ['Poppins','sans-serif'] } } }
+    }
+  </script>
+  <style>
+    * { font-family: 'Poppins', sans-serif; }
+    .nav-link { color:#fff; font-size:15px; font-weight:400; padding:6px 2px; position:relative; text-decoration:none; transition:color 0.2s; }
+    .nav-link:hover { color:#FFDA00; }
+    .nav-link::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:#FFDA00; transition:width 0.2s; }
+    .nav-link:hover::after { width:100%; }
+    .btn-gold { background:#FFDA00; color:#15397F; font-weight:600; font-size:15px; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; display:inline-block; text-decoration:none; transition:background 0.2s, transform 0.15s; }
+    .btn-gold:hover { background:#e5c500; transform:translateY(-1px); }
+    .btn-outline-blue { background:transparent; color:#15397F; font-weight:500; font-size:15px; padding:12px 30px; border-radius:4px; border:2px solid #15397F; cursor:pointer; display:inline-block; text-decoration:none; transition:background 0.2s, color 0.2s; }
+    .btn-outline-blue:hover { background:#15397F; color:#fff; }
+    .permit-card { background:#fff; border:1px solid #BEC6C3; border-radius:8px; padding:32px; box-shadow:0 2px 12px rgba(0,0,0,0.07); }
+    .notice-callout { background:#FFF8CC; border-left:4px solid #FFDA00; padding:16px 20px; border-radius:4px; }
+    .footer-link { color:#BEC6C3; font-size:14px; text-decoration:none; transition:color 0.2s; display:block; margin-bottom:8px; }
+    .footer-link:hover { color:#FFDA00; }
+    #mobile-menu { display:none; }
+    #mobile-menu.open { display:block; }
+    a:focus-visible, button:focus-visible { outline:2px solid #FFDA00; outline-offset:2px; border-radius:2px; }
+    /* Accordion */
+    .accordion-btn { width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #BEC6C3; padding:18px 0; font-size:16px; font-weight:500; color:#15397F; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+    .accordion-btn:hover { color:#0D2352; }
+    .accordion-content { display:none; padding:16px 0 20px; font-size:15px; color:#A0ACAA; line-height:1.7; }
+    .accordion-content.open { display:block; }
+    .accordion-icon { transition:transform 0.2s; }
+    .accordion-btn.active .accordion-icon { transform:rotate(180deg); }
+  </style>
+</head>
+<body class="bg-white text-ut-text">
+
+  <!-- HEADER -->
+  <header class="bg-ut-blue sticky top-0 z-50 shadow-md" style="height:72px;">
+    <div class="max-w-[1200px] mx-auto px-5 lg:px-10 h-full flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
+        <div class="bg-white rounded px-3 py-1.5 flex items-center gap-2">
+          <span style="font-size:18px; font-weight:600; color:#15397F; letter-spacing:-0.03em;">Park</span>
+          <span style="font-size:18px; font-weight:600; color:#FFDA00; background:#15397F; padding:0 4px;">U</span>
+          <span style="font-size:18px; font-weight:600; color:#15397F; letter-spacing:-0.03em;">Toledo</span>
+        </div>
+      </a>
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+        <a href="students.html" class="nav-link" style="color:#FFDA00;">Students</a>
+        <a href="faculty-staff.html" class="nav-link">Faculty &amp; Staff</a>
+        <a href="visitors.html" class="nav-link">Visitors</a>
+        <a href="daily-hourly.html" class="nav-link">Daily / Hourly</a>
+        <a href="citations.html" class="nav-link">Citations</a>
+        <a href="find-parking.html" class="nav-link">Find Parking</a>
+        <a href="news.html" class="nav-link">News</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" class="btn-gold hidden lg:inline-block" style="padding:10px 22px; font-size:14px;">Parking Portal</a>
+      <button id="hamburger-btn" class="lg:hidden flex flex-col justify-center p-2" aria-label="Toggle menu" aria-expanded="false">
+        <span style="display:block;width:24px;height:2px;background:#fff;margin:5px 0;"></span>
+        <span style="display:block;width:24px;height:2px;background:#fff;margin:5px 0;"></span>
+        <span style="display:block;width:24px;height:2px;background:#fff;margin:5px 0;"></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="bg-ut-dark lg:hidden absolute top-full left-0 w-full z-50 pb-4 border-t border-white/10">
+      <div class="max-w-[1200px] mx-auto px-5 pt-4 flex flex-col gap-1">
+        <a href="students.html" class="nav-link py-2 border-b border-white/10">Students</a>
+        <a href="faculty-staff.html" class="nav-link py-2 border-b border-white/10">Faculty &amp; Staff</a>
+        <a href="visitors.html" class="nav-link py-2 border-b border-white/10">Visitors</a>
+        <a href="daily-hourly.html" class="nav-link py-2 border-b border-white/10">Daily / Hourly</a>
+        <a href="citations.html" class="nav-link py-2 border-b border-white/10">Citations</a>
+        <a href="find-parking.html" class="nav-link py-2 border-b border-white/10">Find Parking</a>
+        <a href="news.html" class="nav-link py-2 border-b border-white/10">News</a>
+        <a href="contact.html" class="nav-link py-2 border-b border-white/10">Contact</a>
+        <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" class="btn-gold mt-4 text-center">Parking Portal</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section style="background:linear-gradient(135deg,#15397F 0%,#0D2352 100%); padding:60px 0 64px;">
+    <div class="max-w-[1200px] mx-auto px-5 lg:px-10">
+      <p style="color:#FFDA00; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px;">
+        <a href="index.html" style="color:#BEC6C3; text-decoration:none;">Home</a> &rsaquo; Student Parking
+      </p>
+      <h1 style="font-size:clamp(32px,4vw,48px); font-weight:600; color:#fff; letter-spacing:-0.02em; margin-bottom:12px;">Student Parking</h1>
+      <p style="font-size:18px; color:#BEC6C3; max-width:600px; line-height:1.6;">Purchase semester, monthly, or daily permits to park on the UT Main Campus.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="max-w-[1200px] mx-auto px-5 lg:px-10" style="padding-top:64px; padding-bottom:80px;">
+
+      <!-- Intro + CTA -->
+      <div style="display:grid; grid-template-columns:1fr; gap:40px; margin-bottom:64px;" class="lg:grid-cols-[1fr_320px]">
+        <div>
+          <h2 style="font-size:28px; font-weight:500; color:#15397F; margin-bottom:16px;">Student Parking Permits</h2>
+          <p style="font-size:16px; color:#1A1A1A; line-height:1.8; margin-bottom:16px;">
+            Full-time and part-time students enrolled at The University of Toledo may purchase parking permits through the ParkUToledo portal. Permits are required in all designated parking areas during enforcement hours.
+          </p>
+          <p style="font-size:16px; color:#1A1A1A; line-height:1.8; margin-bottom:16px;">
+            Semester permits are the most economical option for students who park on campus regularly. Daily permits are also available for occasional use through the portal or ParkMobile app.
+          </p>
+          <div class="notice-callout" style="margin-top:24px;">
+            <strong style="color:#1A1A1A;">Pricing Note:</strong>
+            <span style="color:#1A1A1A; font-size:15px;"> Permit prices are subject to change each academic year. Visit the Parking Portal for current pricing.</span>
+          </div>
+        </div>
+        <div>
+          <div class="permit-card" style="text-align:center;">
+            <div style="width:56px; height:56px; background:#EEF2FB; border-radius:12px; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#15397F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h3 style="font-size:20px; font-weight:500; color:#15397F; margin-bottom:8px;">Ready to Purchase?</h3>
+            <p style="font-size:14px; color:#A0ACAA; line-height:1.6; margin-bottom:24px;">Log in to the parking portal to buy or manage your student permit.</p>
+            <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" class="btn-gold" style="display:block; text-align:center;">Purchase Student Permit</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Permit Type Cards -->
+      <h2 style="font-size:28px; font-weight:500; color:#15397F; margin-bottom:24px;">Permit Options</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px; margin-bottom:64px;">
+
+        <div class="permit-card">
+          <h3 style="font-size:18px; font-weight:500; color:#15397F; margin-bottom:8px;">Semester Permit</h3>
+          <p style="font-size:15px; color:#A0ACAA; line-height:1.6; margin-bottom:16px;">Valid for the full fall or spring semester. Best value for students who park regularly on campus.</p>
+          <ul style="list-style:none; padding:0; margin:0; font-size:14px; color:#1A1A1A; display:flex; flex-direction:column; gap:8px;">
+            <li style="display:flex; gap:8px;"><span style="color:#15397F; font-weight:600;">✓</span> Full-semester coverage</li>
+            <li style="display:flex; gap:8px;"><span style="color:#15397F; font-weight:600;">✓</span> Assigned zone parking</li>
+            <li style="display:flex; gap:8px;"><span style="color:#15397F; font-weight:600;">✓</span> Digital permit via portal</li>
+          </ul>
+        </div>
+
+        <div class="permit-card">
+          <h3 style="font-size:18px; font-weight:500; color:#15397F; margin-bottom:8px;">Monthly Permit</h3>
+          <p style="font-size:15px; color:#A0ACAA; line-height:1.6; margin-bottom:16px;">Month-to-month parking permit for students who need flexible options.</p>
+          <ul style="list-style:none; padding:0; margin:0; font-size:14px; color:#1A1A1A; display:flex; flex-direction:column; gap:8px;">
+            <li style="display:flex; gap:8px;"><span style="color:#15397F; font-weight:600;">✓</span> 30-day coverage</li>
+            <li style="display:flex; gap:8px;"><span style="color:#15397F; font-weight:600;">✓</span> Flexible purchase schedule</li>
+            <li style="display:flex; gap:8px;"><span style="color:#15397F; font-weight:600;">✓</span> Cancel anytime</li>
+          </ul>
+        </div>
+
+        <div class="permit-card">
+          <h3 style="font-size:18px; font-weight:500; color:#15397F; margin-bottom:8px;">Daily Permit</h3>
+          <p style="font-size:15px; color:#A0ACAA; line-height:1.6; margin-bottom:16px;">Single-day parking for occasional campus visits. Purchase in advance via the portal.</p>
+          <ul style="list-style:none; padding:0; margin:0; font-size:14px; color:#1A1A1A; display:flex; flex-direction:column; gap:8px;">
+            <li style="display:flex; gap:8px;"><span style="color:#15397F; font-weight:600;">✓</span> Starting at $5/day</li>
+            <li style="display:flex; gap:8px;"><span style="color:#15397F; font-weight:600;">✓</span> Purchase day-of or in advance</li>
+            <li style="display:flex; gap:8px;"><span style="color:#15397F; font-weight:600;">✓</span> Available via portal or ParkMobile</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Key Rules -->
+      <div class="notice-callout" style="margin-bottom:64px;">
+        <h3 style="font-size:18px; font-weight:500; color:#1A1A1A; margin-bottom:12px;">Key Parking Rules for Students</h3>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:15px; color:#1A1A1A; line-height:1.6;">
+          <li>• Parking permits are required Mon–Fri 7AM–10PM and Sat–Sun 9AM–5PM in all designated areas.</li>
+          <li>• Permits are non-transferable and must be displayed in the vehicle at all times.</li>
+          <li>• Student permits are only valid in student-designated zones.</li>
+          <li>• Citations may be appealed within 10 calendar days via the Parking Portal.</li>
+          <li>• Vehicles with 3 or more unpaid citations may be immobilized (booted).</li>
+        </ul>
+      </div>
+
+      <!-- FAQ Accordion -->
+      <h2 style="font-size:28px; font-weight:500; color:#15397F; margin-bottom:8px;">Frequently Asked Questions</h2>
+      <div style="margin-top:16px;">
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false">
+            How do I purchase a student parking permit?
+            <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15397F" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-content">
+            Log in to the Parking Portal at <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" style="color:#005CB9;">vpermit.com/parkutoledo</a> using your UTAD credentials. Select "Purchase Permit," choose the student permit type, and complete the checkout process. Your permit will be available digitally and linked to your vehicle's license plate.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false">
+            Where can students park on campus?
+            <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15397F" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-content">
+            Student permit holders may park in student-designated zones as indicated on the campus parking map. Specific zones vary by permit type. Visit the <a href="find-parking.html" style="color:#005CB9;">Find Parking</a> page for the interactive campus map.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false">
+            Can I park in faculty/staff areas?
+            <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15397F" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-content">
+            No. Student permits are not valid in faculty/staff designated zones during enforcement hours. Violations will result in a citation. After 4PM and on weekends, most areas are open to all valid permit holders — check signage.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false">
+            What happens if I get a parking citation?
+            <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15397F" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-content">
+            You can pay or appeal your citation through the Parking Portal. Appeals must be submitted within 10 calendar days of the citation date. See the <a href="citations.html" style="color:#005CB9;">Citations</a> page for full details on the appeals process.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false">
+            Is parking enforcement active on weekends?
+            <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15397F" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-content">
+            Yes. Parking enforcement is active Saturday–Sunday 9AM–5PM. A valid permit or daily pass is required during these hours in all designated parking areas.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background:#0D2352;">
+    <div class="max-w-[1200px] mx-auto px-5 lg:px-10 py-16">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:48px;">
+        <div>
+          <div class="bg-white inline-flex rounded px-3 py-2 mb-4" style="gap:4px; align-items:center;">
+            <span style="font-size:16px; font-weight:600; color:#15397F;">Park</span>
+            <span style="font-size:16px; font-weight:600; color:#FFDA00; background:#15397F; padding:0 3px;">U</span>
+            <span style="font-size:16px; font-weight:600; color:#15397F;">Toledo</span>
+          </div>
+          <p style="color:#BEC6C3; font-size:14px; line-height:1.7;">Parking management for The University of Toledo.</p>
+        </div>
+        <div>
+          <h3 style="font-size:14px; font-weight:500; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Quick Links</h3>
+          <a href="students.html" class="footer-link">Students</a>
+          <a href="faculty-staff.html" class="footer-link">Faculty &amp; Staff</a>
+          <a href="visitors.html" class="footer-link">Visitors</a>
+          <a href="citations.html" class="footer-link">Citations</a>
+          <a href="rules-regulations.html" class="footer-link">Rules &amp; Regulations</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+        <div>
+          <h3 style="font-size:14px; font-weight:500; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Contact</h3>
+          <p style="color:#BEC6C3; font-size:14px; line-height:1.7; margin-bottom:8px;">2801 W. Bancroft St<br/>Mail Stop 107<br/>Toledo, OH 43606</p>
+          <a href="mailto:info@parkutoledo.com" class="footer-link">info@parkutoledo.com</a>
+        </div>
+        <div>
+          <h3 style="font-size:14px; font-weight:500; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Portal</h3>
+          <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" class="btn-gold" style="font-size:14px; padding:12px 24px; display:block; text-align:center;">Parking Portal</a>
+        </div>
+      </div>
+    </div>
+    <div style="background:#091A3A; border-top:1px solid rgba(255,255,255,0.06);">
+      <div class="max-w-[1200px] mx-auto px-5 lg:px-10 py-4">
+        <p style="color:#A0ACAA; font-size:13px;">© 2026 ParkUToledo. The University of Toledo.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger-btn').addEventListener('click', function() {
+      const m = document.getElementById('mobile-menu');
+      const open = m.classList.toggle('open');
+      this.setAttribute('aria-expanded', open);
+    });
+    document.querySelectorAll('.accordion-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        const isOpen = content.classList.toggle('open');
+        this.classList.toggle('active', isOpen);
+        this.setAttribute('aria-expanded', isOpen);
+      });
+    });
+  </script>
+</body>
+</html>

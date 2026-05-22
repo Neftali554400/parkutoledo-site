@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily & Hourly Parking — ParkUToledo</title>
+  <meta name="description" content="Daily and hourly parking options at The University of Toledo. ParkMobile metered zones and daily permit purchase." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{'ut-blue':'#15397F','ut-gold':'#FFDA00','ut-dark':'#0D2352','ut-accent':'#005CB9','ut-gray-light':'#BEC6C3','ut-gray-mid':'#A0ACAA','ut-text':'#1A1A1A','ut-bg-light':'#F5F6F8'},fontFamily:{poppins:['Poppins','sans-serif']}}}}}</script>
+  <style>
+    * { font-family: 'Poppins', sans-serif; }
+    .nav-link { color:#fff; font-size:15px; font-weight:400; padding:6px 2px; position:relative; text-decoration:none; transition:color 0.2s; }
+    .nav-link:hover { color:#FFDA00; }
+    .nav-link::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:#FFDA00; transition:width 0.2s; }
+    .nav-link:hover::after { width:100%; }
+    .btn-gold { background:#FFDA00; color:#15397F; font-weight:600; font-size:15px; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; display:inline-block; text-decoration:none; transition:background 0.2s, transform 0.15s; }
+    .btn-gold:hover { background:#e5c500; transform:translateY(-1px); }
+    .permit-card { background:#fff; border:1px solid #BEC6C3; border-radius:8px; padding:32px; box-shadow:0 2px 12px rgba(0,0,0,0.07); }
+    .footer-link { color:#BEC6C3; font-size:14px; text-decoration:none; transition:color 0.2s; display:block; margin-bottom:8px; }
+    .footer-link:hover { color:#FFDA00; }
+    #mobile-menu { display:none; } #mobile-menu.open { display:block; }
+    a:focus-visible, button:focus-visible { outline:2px solid #FFDA00; outline-offset:2px; border-radius:2px; }
+  </style>
+</head>
+<body class="bg-white text-ut-text">
+
+  <header class="bg-ut-blue sticky top-0 z-50 shadow-md" style="height:72px;">
+    <div class="max-w-[1200px] mx-auto px-5 lg:px-10 h-full flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="bg-white rounded px-3 py-1.5 flex items-center gap-2">
+          <span style="font-size:18px; font-weight:600; color:#15397F;">Park</span>
+          <span style="font-size:18px; font-weight:600; color:#FFDA00; background:#15397F; padding:0 4px;">U</span>
+          <span style="font-size:18px; font-weight:600; color:#15397F;">Toledo</span>
+        </div>
+      </a>
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+        <a href="students.html" class="nav-link">Students</a>
+        <a href="faculty-staff.html" class="nav-link">Faculty &amp; Staff</a>
+        <a href="visitors.html" class="nav-link">Visitors</a>
+        <a href="daily-hourly.html" class="nav-link" style="color:#FFDA00;">Daily / Hourly</a>
+        <a href="citations.html" class="nav-link">Citations</a>
+        <a href="find-parking.html" class="nav-link">Find Parking</a>
+        <a href="news.html" class="nav-link">News</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" class="btn-gold hidden lg:inline-block" style="padding:10px 22px; font-size:14px;">Parking Portal</a>
+      <button id="hamburger-btn" class="lg:hidden flex flex-col justify-center p-2" aria-label="Toggle menu">
+        <span style="display:block;width:24px;height:2px;background:#fff;margin:5px 0;"></span>
+        <span style="display:block;width:24px;height:2px;background:#fff;margin:5px 0;"></span>
+        <span style="display:block;width:24px;height:2px;background:#fff;margin:5px 0;"></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="bg-ut-dark lg:hidden absolute top-full left-0 w-full z-50 pb-4 border-t border-white/10">
+      <div class="max-w-[1200px] mx-auto px-5 pt-4 flex flex-col gap-1">
+        <a href="students.html" class="nav-link py-2 border-b border-white/10">Students</a>
+        <a href="faculty-staff.html" class="nav-link py-2 border-b border-white/10">Faculty &amp; Staff</a>
+        <a href="visitors.html" class="nav-link py-2 border-b border-white/10">Visitors</a>
+        <a href="daily-hourly.html" class="nav-link py-2 border-b border-white/10">Daily / Hourly</a>
+        <a href="citations.html" class="nav-link py-2 border-b border-white/10">Citations</a>
+        <a href="find-parking.html" class="nav-link py-2 border-b border-white/10">Find Parking</a>
+        <a href="news.html" class="nav-link py-2 border-b border-white/10">News</a>
+        <a href="contact.html" class="nav-link py-2 border-b border-white/10">Contact</a>
+        <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" class="btn-gold mt-4 text-center">Parking Portal</a>
+      </div>
+    </div>
+  </header>
+
+  <section style="background:linear-gradient(135deg,#15397F 0%,#0D2352 100%); padding:60px 0 64px;">
+    <div class="max-w-[1200px] mx-auto px-5 lg:px-10">
+      <p style="color:#FFDA00; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px;">
+        <a href="index.html" style="color:#BEC6C3; text-decoration:none;">Home</a> &rsaquo; Daily / Hourly Parking
+      </p>
+      <h1 style="font-size:clamp(32px,4vw,48px); font-weight:600; color:#fff; letter-spacing:-0.02em; margin-bottom:12px;">Daily &amp; Hourly Parking</h1>
+      <p style="font-size:18px; color:#BEC6C3; max-width:600px; line-height:1.6;">Short-term parking is available via the ParkMobile app or daily permit purchase through the portal.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="max-w-[1200px] mx-auto px-5 lg:px-10" style="padding-top:64px; padding-bottom:80px;">
+
+      <!-- ParkMobile Section -->
+      <div style="display:grid; grid-template-columns:1fr; gap:40px; margin-bottom:64px;" class="lg:grid-cols-2">
+        <div>
+          <h2 style="font-size:28px; font-weight:500; color:#15397F; margin-bottom:16px;">ParkMobile — Hourly Parking</h2>
+          <p style="font-size:16px; color:#1A1A1A; line-height:1.8; margin-bottom:16px;">
+            ParkMobile is the fastest way to pay for short-term parking on campus. Download the app, find your zone number on the meter or signage, and start your session in seconds.
+          </p>
+          <ul style="list-style:none; padding:0; margin:0 0 24px; font-size:15px; color:#1A1A1A; display:flex; flex-direction:column; gap:10px; line-height:1.6;">
+            <li style="display:flex; gap:10px;"><span style="color:#15397F; font-weight:600; margin-top:1px;">✓</span> No coins, no meter — pay from your phone</li>
+            <li style="display:flex; gap:10px;"><span style="color:#15397F; font-weight:600; margin-top:1px;">✓</span> Extend your session remotely</li>
+            <li style="display:flex; gap:10px;"><span style="color:#15397F; font-weight:600; margin-top:1px;">✓</span> Get low-time alerts before your session expires</li>
+            <li style="display:flex; gap:10px;"><span style="color:#15397F; font-weight:600; margin-top:1px;">✓</span> Available in Zones 11, 12, 13, and 18</li>
+          </ul>
+          <a href="https://parkmobile.io" target="_blank" rel="noopener" class="btn-gold">Download ParkMobile</a>
+        </div>
+
+        <div>
+          <h2 style="font-size:28px; font-weight:500; color:#15397F; margin-bottom:16px;">ParkMobile Meter Zones</h2>
+          <div style="border:1px solid #BEC6C3; border-radius:8px; overflow:hidden;">
+            <table style="width:100%; border-collapse:collapse; font-size:15px;">
+              <thead>
+                <tr style="background:#15397F; color:#fff;">
+                  <th style="padding:14px 20px; text-align:left; font-weight:500;">Zone</th>
+                  <th style="padding:14px 20px; text-align:left; font-weight:500;">Location</th>
+                  <th style="padding:14px 20px; text-align:left; font-weight:500;">Rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px solid #BEC6C3;">
+                  <td style="padding:14px 20px; font-weight:500; color:#15397F;">Zone 11</td>
+                  <td style="padding:14px 20px; color:#1A1A1A;">Main Campus South</td>
+                  <td style="padding:14px 20px; color:#1A1A1A;">$1.10/hr</td>
+                </tr>
+                <tr style="border-bottom:1px solid #BEC6C3; background:#F5F6F8;">
+                  <td style="padding:14px 20px; font-weight:500; color:#15397F;">Zone 12</td>
+                  <td style="padding:14px 20px; color:#1A1A1A;">University Hall Area</td>
+                  <td style="padding:14px 20px; color:#1A1A1A;">$1.10/hr</td>
+                </tr>
+                <tr style="border-bottom:1px solid #BEC6C3;">
+                  <td style="padding:14px 20px; font-weight:500; color:#15397F;">Zone 13</td>
+                  <td style="padding:14px 20px; color:#1A1A1A;">Bancroft Street Front</td>
+                  <td style="padding:14px 20px; color:#1A1A1A;">$2.20/hr</td>
+                </tr>
+                <tr>
+                  <td style="padding:14px 20px; font-weight:500; color:#15397F;">Zone 18</td>
+                  <td style="padding:14px 20px; color:#1A1A1A;">Health Science Campus</td>
+                  <td style="padding:14px 20px; color:#1A1A1A;">$2.20/hr</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map embed placeholder -->
+      <h2 style="font-size:28px; font-weight:500; color:#15397F; margin-bottom:20px;">Campus Parking Map</h2>
+      <div style="border-radius:8px; overflow:hidden; border:1px solid #BEC6C3; margin-bottom:24px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2988.5!2d-83.6085!3d41.6602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883c6960d2b20c27%3A0x4c6a1c8e22d2527!2sUniversity%20of%20Toledo%2C%20Toledo%2C%20OH!5e0!3m2!1sen!2sus!4v1716000000000"
+          width="100%" height="420" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="University of Toledo campus map"></iframe>
+      </div>
+      <p style="font-size:14px; color:#A0ACAA; margin-bottom:32px;">View the interactive campus parking map for detailed lot information, zone boundaries, and accessibility spaces.</p>
+      <a href="find-parking.html" style="color:#005CB9; font-weight:500; font-size:15px; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+        View Full Parking Map
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+    </div>
+  </main>
+
+  <footer style="background:#0D2352;">
+    <div class="max-w-[1200px] mx-auto px-5 lg:px-10 py-16">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:48px;">
+        <div>
+          <div class="bg-white inline-flex rounded px-3 py-2 mb-4" style="gap:4px; align-items:center;">
+            <span style="font-size:16px; font-weight:600; color:#15397F;">Park</span>
+            <span style="font-size:16px; font-weight:600; color:#FFDA00; background:#15397F; padding:0 3px;">U</span>
+            <span style="font-size:16px; font-weight:600; color:#15397F;">Toledo</span>
+          </div>
+          <p style="color:#BEC6C3; font-size:14px; line-height:1.7;">Parking management for The University of Toledo.</p>
+        </div>
+        <div>
+          <h3 style="font-size:14px; font-weight:500; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Quick Links</h3>
+          <a href="students.html" class="footer-link">Students</a>
+          <a href="faculty-staff.html" class="footer-link">Faculty &amp; Staff</a>
+          <a href="visitors.html" class="footer-link">Visitors</a>
+          <a href="citations.html" class="footer-link">Citations</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+        <div>
+          <h3 style="font-size:14px; font-weight:500; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Contact</h3>
+          <p style="color:#BEC6C3; font-size:14px; line-height:1.7; margin-bottom:8px;">2801 W. Bancroft St<br/>Toledo, OH 43606</p>
+          <a href="mailto:info@parkutoledo.com" class="footer-link">info@parkutoledo.com</a>
+        </div>
+        <div>
+          <h3 style="font-size:14px; font-weight:500; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Portal</h3>
+          <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" class="btn-gold" style="font-size:14px; padding:12px 24px; display:block; text-align:center;">Parking Portal</a>
+        </div>
+      </div>
+    </div>
+    <div style="background:#091A3A; border-top:1px solid rgba(255,255,255,0.06);">
+      <div class="max-w-[1200px] mx-auto px-5 lg:px-10 py-4">
+        <p style="color:#A0ACAA; font-size:13px;">© 2026 ParkUToledo. The University of Toledo.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('hamburger-btn').addEventListener('click', function() {
+      const m = document.getElementById('mobile-menu'); m.classList.toggle('open'); this.setAttribute('aria-expanded', m.classList.contains('open'));
+    });
+  </script>
+</body>
+</html>

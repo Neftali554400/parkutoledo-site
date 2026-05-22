@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ParkUToledo — Parking at The University of Toledo</title>
+  <meta name="description" content="Find permits, pay citations, and get parking information at The University of Toledo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ut-blue':       '#15397F',
+            'ut-gold':       '#FFDA00',
+            'ut-dark':       '#0D2352',
+            'ut-accent':     '#005CB9',
+            'ut-gray-light': '#BEC6C3',
+            'ut-gray-mid':   '#A0ACAA',
+            'ut-text':       '#1A1A1A',
+            'ut-bg-light':   '#F5F6F8',
+            'ut-footer-bar': '#091A3A',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          boxShadow: {
+            'card':       '0 2px 12px rgba(0,0,0,0.07)',
+            'card-hover': '0 4px 20px rgba(0,0,0,0.12)',
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    * { font-family: 'Poppins', sans-serif; }
+    html { scroll-behavior: smooth; }
+
+    /* Announcement bar */
+    .announcement-bar {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 14px;
+      font-weight:600;
+      color: #1A1A1A;
+      line-height: 1.5;
+    }
+
+    /* Nav */
+    .nav-link {
+      color: #FFDA00;
+      font-size: 13px;
+      font-weight:500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 0;
+      position: relative;
+      text-decoration: none;
+      transition: color 0.2s, opacity 0.2s;
+    }
+    .nav-link:hover { opacity: 0.8; }
+    .nav-link-login {
+      color: #fff;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 3px;
+      padding: 5px 14px;
+      font-size: 13px;
+      font-weight:500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-link-login:hover { background: rgba(255,255,255,0.15); }
+
+    /* Buttons */
+    .btn-gold {
+      background: #FFDA00;
+      color: #15397F;
+      font-weight:600;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-gold:hover { background: #e5c500; transform: translateY(-1px); }
+    .btn-gold:active { transform: translateY(0); }
+
+    .btn-primary {
+      background: #15397F;
+      color: #fff;
+      font-weight:500;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: #0D2352; transform: translateY(-1px); }
+
+    .btn-outline-white {
+      background: transparent;
+      color: #fff;
+      font-weight:500;
+      font-size: 15px;
+      padding: 12px 30px;
+      border-radius: 4px;
+      border: 2px solid #fff;
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-outline-white:hover {
+      background: #fff;
+      color: #15397F;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline-blue {
+      background: transparent;
+      color: #15397F;
+      font-weight:500;
+      font-size: 15px;
+      padding: 12px 30px;
+      border-radius: 4px;
+      border: 2px solid #15397F;
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-outline-blue:hover { background: #15397F; color: #fff; }
+
+    /* Cards */
+    .permit-card {
+      background: #fff;
+      border: 1px solid #BEC6C3;
+      border-radius: 8px;
+      padding: 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .permit-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
+    }
+
+    /* Notice */
+    .notice-banner {
+      background: #FFF8CC;
+      border-left: 4px solid #FFDA00;
+      padding: 16px 20px;
+      border-radius: 4px;
+    }
+
+    /* News card */
+    .news-card {
+      background: #fff;
+      border: 1px solid #BEC6C3;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .news-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
+    }
+
+    /* Mobile menu */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+    .hamburger-line {
+      display: block;
+      width: 24px; height: 2px;
+      background: #fff;
+      margin: 5px 0;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    /* Footer */
+    .footer-link {
+      color: #BEC6C3;
+      font-size: 14px;
+      text-decoration: none;
+      transition: color 0.2s;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .footer-link:hover { color: #FFDA00; }
+
+    /* Focus visible */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #FFDA00;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* News grid responsive */
+    @media (max-width: 768px) {
+      .news-grid-3 { grid-template-columns: 1fr !important; }
+    }
+
+    /* Parking Categories accordion */
+    .pc-item + .pc-item {
+      border-top: 1px solid #c8cdd4;
+    }
+    .pc-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      background: #e9eaec;
+      border: none;
+      cursor: pointer;
+      font-size: 17px;
+      font-weight:500;
+      color: #0D2352;
+      font-family: 'Poppins', sans-serif;
+      text-align: left;
+      transition: background 0.15s;
+    }
+    .pc-btn:hover { background: #dde0e4; }
+    .pc-btn--open {
+      background: #0D2352;
+      color: #fff;
+    }
+    .pc-btn--open:hover { background: #0a1e47; }
+    .pc-chevron { flex-shrink: 0; transition: transform 0.2s; }
+    .pc-chevron--up { transform: none; }
+    .pc-body {
+      padding: 28px 24px 32px;
+      background: #fff;
+    }
+  </style>
+</head>
+<body class="bg-white text-ut-text">
+
+  <!-- ═══════════════════════════════════════════
+       ANNOUNCEMENT BAR
+  ═══════════════════════════════════════════ -->
+  <div class="announcement-bar" role="banner">
+    Please remember that parking permits are required at all times including nights and weekends, in between semesters and academic breaks.
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER / NAV
+  ═══════════════════════════════════════════ -->
+  <header class="bg-ut-blue sticky top-0 z-50" style="box-shadow:0 2px 8px rgba(0,0,0,0.18);">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10" style="height:72px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+
+      <!-- Logo -->
+      <a href="index.html" class="flex-shrink-0" style="display:flex; align-items:center; gap:0; text-decoration:none;">
+        <!-- P badge -->
+        <span style="display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; background:#FFDA00; border-radius:50%; font-size:20px; font-weight:900; color:#15397F; line-height:1; font-style:italic; letter-spacing:-0.04em;">P</span>
+        <span style="font-size:20px; font-weight:600; color:#fff; margin-left:4px; letter-spacing:-0.01em;">ark</span>
+        <span style="font-size:20px; font-weight:900; color:#FFDA00; letter-spacing:-0.01em;">U</span>
+        <span style="font-size:20px; font-weight:600; color:#fff; letter-spacing:-0.01em;">Toledo</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-5 xl:gap-7 flex-1 justify-end mr-4" aria-label="Primary navigation">
+        <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" class="nav-link-login">Log In</a>
+        <a href="students.html" class="nav-link">Permit Parking</a>
+        <a href="visitors.html" class="nav-link">Visitor Parking</a>
+        <a href="find-parking.html" class="nav-link">Find Parking</a>
+        <a href="rules-regulations.html" class="nav-link">User Guides</a>
+        <a href="game-day.html" class="nav-link">Holidays and Global Days</a>
+        <a href="#faqs" class="nav-link">FAQs</a>
+        <a href="contact.html" class="nav-link">Contact Parking</a>
+      </nav>
+
+      <!-- Hamburger (mobile) -->
+      <button id="hamburger-btn" class="lg:hidden flex flex-col justify-center p-2" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="bg-ut-dark lg:hidden absolute top-full left-0 w-full z-50 pb-4 border-t border-white/10" role="navigation" aria-label="Mobile navigation">
+      <div class="max-w-[1400px] mx-auto px-6 pt-4 flex flex-col gap-1">
+        <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" class="nav-link py-2 border-b border-white/10">Log In</a>
+        <a href="students.html" class="nav-link py-2 border-b border-white/10">Permit Parking</a>
+        <a href="visitors.html" class="nav-link py-2 border-b border-white/10">Visitor Parking</a>
+        <a href="find-parking.html" class="nav-link py-2 border-b border-white/10">Find Parking</a>
+        <a href="rules-regulations.html" class="nav-link py-2 border-b border-white/10">User Guides</a>
+        <a href="game-day.html" class="nav-link py-2 border-b border-white/10">Holidays and Global Days</a>
+        <a href="#faqs" class="nav-link py-2 border-b border-white/10">FAQs</a>
+        <a href="contact.html" class="nav-link py-2 border-b border-white/10">Contact Parking</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════ -->
+    <section style="position:relative; min-height:600px; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+      <!-- Background campus image -->
+      <img
+        src="images/hero-image.jpg"
+        alt=""
+        aria-hidden="true"
+        style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top;"
+      />
+      <!-- Dark overlay — matches the screenshot's dimmed campus photo -->
+      <div style="position:absolute; inset:0; background:rgba(10,20,40,0.58);"></div>
+
+      <!-- Centered white card -->
+      <div style="position:relative; z-index:2; background:#fff; border-radius:16px; padding:56px 64px; text-align:center; max-width:520px; width:calc(100% - 48px); box-shadow:0 8px 40px rgba(0,0,0,0.28);">
+        <h1 style="font-size:clamp(26px,3.5vw,36px); font-weight:700; color:#0D2352; line-height:1.25; margin-bottom:36px; letter-spacing:-0.02em;">
+          Welcome to ParkUToledo!
+        </h1>
+
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener"
+             style="display:block; background:#FFDA00; color:#1A1A1A; font-size:15px; font-weight:500; padding:16px 32px; border-radius:6px; text-decoration:none; transition:background 0.2s, transform 0.15s;"
+             onmouseover="this.style.background='#e5c500';this.style.transform='translateY(-1px)'"
+             onmouseout="this.style.background='#FFDA00';this.style.transform='translateY(0)'">
+            Log In/Sign Up
+          </a>
+          <a href="contact.html"
+             style="display:block; background:#FFDA00; color:#1A1A1A; font-size:15px; font-weight:500; padding:16px 32px; border-radius:6px; text-decoration:none; transition:background 0.2s, transform 0.15s;"
+             onmouseover="this.style.background='#e5c500';this.style.transform='translateY(-1px)'"
+             onmouseout="this.style.background='#FFDA00';this.style.transform='translateY(0)'">
+            Parking Questions? Contact Parking
+          </a>
+          <a href="rules-regulations.html"
+             style="display:block; background:#FFDA00; color:#1A1A1A; font-size:15px; font-weight:500; padding:16px 32px; border-radius:6px; text-decoration:none; transition:background 0.2s, transform 0.15s;"
+             onmouseover="this.style.background='#e5c500';this.style.transform='translateY(-1px)'"
+             onmouseout="this.style.background='#FFDA00';this.style.transform='translateY(0)'">
+            Rules &amp; Regulations
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PARKING CATEGORIES ACCORDION
+    ═══════════════════════════════════════════ -->
+    <section style="padding:72px 0 80px;">
+      <div class="max-w-[1200px] mx-auto px-5 lg:px-10">
+
+        <h2 style="font-size:clamp(22px,3vw,32px); font-weight:700; color:#0D2352; text-align:center; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:40px;">Parking Categories</h2>
+
+        <div style="border:1px solid #c8cdd4; border-radius:4px; overflow:hidden;">
+
+          <!-- ── Permit Parking (open by default) ── -->
+          <div class="pc-item" id="pc-permit">
+            <button class="pc-btn pc-btn--open" aria-expanded="true" aria-controls="pc-permit-body" onclick="togglePC(this)">
+              <span>Permit Parking</span>
+              <svg class="pc-chevron pc-chevron--up" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 15l-6-6-6 6"/></svg>
+            </button>
+            <div class="pc-body" id="pc-permit-body" style="display:block;">
+              <div style="display:flex; flex-direction:column; gap:24px;">
+                <div>
+                  <a href="students.html" style="font-size:16px; font-weight:600; color:#0D2352; text-decoration:underline; display:inline-block; margin-bottom:4px;">Parking Permits</a>
+                  <p style="font-size:15px; color:#1A1A1A; margin:0; line-height:1.6;">Purchase Daily, Monthly and Fixed Term Permits <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" style="color:#0D2352; font-weight:500; text-decoration:underline;">Here</a></p>
+                </div>
+                <div>
+                  <a href="daily-hourly.html" style="font-size:16px; font-weight:600; color:#0D2352; text-decoration:underline; display:inline-block; margin-bottom:4px;">Purchase Hourly&nbsp;</a>
+                  <p style="font-size:15px; color:#1A1A1A; margin:0; line-height:1.6;">Parking- Purchase Hourly Parking Through <a href="https://parkmobile.io" target="_blank" rel="noopener" style="color:#0D2352; font-weight:500; text-decoration:underline;">ParkMobile</a></p>
+                </div>
+                <div>
+                  <a href="patient-visitor.html" style="font-size:16px; font-weight:600; color:#0D2352; text-decoration:underline; display:inline-block; margin-bottom:4px;">Park In Patient Areas</a>
+                  <p style="font-size:15px; color:#1A1A1A; margin:0; line-height:1.6;">Register to Park as a Patient at <a href="https://www.utmc.com/" target="_blank" rel="noopener" style="color:#0D2352; font-weight:500; text-decoration:underline;">UTMC</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Visitor Parking ── -->
+          <div class="pc-item" id="pc-visitor">
+            <button class="pc-btn" aria-expanded="false" aria-controls="pc-visitor-body" onclick="togglePC(this)">
+              <span>Visitor Parking</span>
+              <svg class="pc-chevron" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="pc-body" id="pc-visitor-body" style="display:none;">
+              <div style="display:flex; flex-direction:column; gap:24px;">
+                <div>
+                  <a href="visitors.html" style="font-size:16px; font-weight:600; color:#0D2352; text-decoration:underline; display:inline-block; margin-bottom:4px;">Guest / Visitor Parking</a>
+                  <p style="font-size:15px; color:#1A1A1A; margin:0; line-height:1.6;">Purchase a daily visitor permit online or via <a href="https://parkmobile.io" target="_blank" rel="noopener" style="color:#0D2352; font-weight:500; text-decoration:underline;">ParkMobile</a> for hourly parking.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Event Parking ── -->
+          <div class="pc-item" id="pc-event">
+            <button class="pc-btn" aria-expanded="false" aria-controls="pc-event-body" onclick="togglePC(this)">
+              <span>Event Parking</span>
+              <svg class="pc-chevron" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="pc-body" id="pc-event-body" style="display:none;">
+              <div style="display:flex; flex-direction:column; gap:24px;">
+                <div>
+                  <a href="department-event.html" style="font-size:16px; font-weight:600; color:#0D2352; text-decoration:underline; display:inline-block; margin-bottom:4px;">Department Event Parking</a>
+                  <p style="font-size:15px; color:#1A1A1A; margin:0; line-height:1.6;">Request designated parking for campus events. 72-hour advance notice required.</p>
+                </div>
+                <div>
+                  <a href="game-day.html" style="font-size:16px; font-weight:600; color:#0D2352; text-decoration:underline; display:inline-block; margin-bottom:4px;">Game Day Parking</a>
+                  <p style="font-size:15px; color:#1A1A1A; margin:0; line-height:1.6;">Information for D, C, and K permit holders on home football and basketball game days.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Enforcement & Citations ── -->
+          <div class="pc-item" id="pc-enforcement">
+            <button class="pc-btn" aria-expanded="false" aria-controls="pc-enforcement-body" onclick="togglePC(this)">
+              <span>Enforcement &amp; Citations</span>
+              <svg class="pc-chevron" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="pc-body" id="pc-enforcement-body" style="display:none;">
+              <div style="display:flex; flex-direction:column; gap:24px;">
+                <div>
+                  <a href="citations.html" style="font-size:16px; font-weight:600; color:#0D2352; text-decoration:underline; display:inline-block; margin-bottom:4px;">Pay or Appeal a Citation</a>
+                  <p style="font-size:15px; color:#1A1A1A; margin:0; line-height:1.6;">Enforcement hours: Mon–Fri 7AM–10PM, Sat–Sun 9AM–5PM. Pay or appeal via <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" style="color:#0D2352; font-weight:500; text-decoration:underline;">the portal</a>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Appeals ── -->
+          <div class="pc-item" id="pc-appeals">
+            <button class="pc-btn" aria-expanded="false" aria-controls="pc-appeals-body" onclick="togglePC(this)">
+              <span>Appeals</span>
+              <svg class="pc-chevron" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="pc-body" id="pc-appeals-body" style="display:none;">
+              <div style="display:flex; flex-direction:column; gap:24px;">
+                <div>
+                  <a href="citations.html#appeals" style="font-size:16px; font-weight:600; color:#0D2352; text-decoration:underline; display:inline-block; margin-bottom:4px;">Citation Appeals</a>
+                  <p style="font-size:15px; color:#1A1A1A; margin:0; line-height:1.6;">Appeals must be filed within 10 calendar days of the citation date. Log in to the Parking Portal to submit your appeal. All decisions are final.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Holidays & Global Days ── -->
+          <div class="pc-item" id="pc-holidays">
+            <button class="pc-btn" aria-expanded="false" aria-controls="pc-holidays-body" onclick="togglePC(this)">
+              <span>Holidays &amp; Global Days</span>
+              <svg class="pc-chevron" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="pc-body" id="pc-holidays-body" style="display:none;">
+              <div style="display:flex; flex-direction:column; gap:24px;">
+                <div>
+                  <a href="game-day.html" style="font-size:16px; font-weight:600; color:#0D2352; text-decoration:underline; display:inline-block; margin-bottom:4px;">Parking on University Holidays</a>
+                  <p style="font-size:15px; color:#1A1A1A; margin:0; line-height:1.6;">Parking enforcement schedules may vary on university holidays and designated global days. Check announcements for updated hours.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── User Guides ── -->
+          <div class="pc-item" id="pc-guides">
+            <button class="pc-btn" aria-expanded="false" aria-controls="pc-guides-body" onclick="togglePC(this)">
+              <span>User Guides</span>
+              <svg class="pc-chevron" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="pc-body" id="pc-guides-body" style="display:none;">
+              <div style="display:flex; flex-direction:column; gap:24px;">
+                <div>
+                  <a href="rules-regulations.html" style="font-size:16px; font-weight:600; color:#0D2352; text-decoration:underline; display:inline-block; margin-bottom:4px;">Rules &amp; Regulations</a>
+                  <p style="font-size:15px; color:#1A1A1A; margin:0; line-height:1.6;">Complete parking rules, violation codes, and fine schedule. <a href="https://content.parkutoledo.com/media/kpbbtlt0/parkutoledo-parking-rules-and-regulations.pdf" target="_blank" rel="noopener" style="color:#0D2352; font-weight:500; text-decoration:underline;">Download PDF</a>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Parking FAQs ── -->
+          <div class="pc-item" id="pc-faqs">
+            <button class="pc-btn" aria-expanded="false" aria-controls="pc-faqs-body" onclick="togglePC(this)" id="faqs">
+              <span>Parking FAQs</span>
+              <svg class="pc-chevron" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="pc-body" id="pc-faqs-body" style="display:none;">
+              <div style="display:flex; flex-direction:column; gap:24px;">
+                <div>
+                  <p style="font-size:15px; font-weight:600; color:#0D2352; margin:0 0 4px;">Do I need a permit on weekends?</p>
+                  <p style="font-size:15px; color:#1A1A1A; margin:0; line-height:1.6;">Yes. Enforcement is active Saturday–Sunday 9AM–5PM in all designated areas.</p>
+                </div>
+                <div>
+                  <p style="font-size:15px; font-weight:600; color:#0D2352; margin:0 0 4px;">How do I purchase a permit?</p>
+                  <p style="font-size:15px; color:#1A1A1A; margin:0; line-height:1.6;">Log in to the <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" style="color:#0D2352; font-weight:500; text-decoration:underline;">Parking Portal</a> to purchase daily, monthly, or semester permits.</p>
+                </div>
+                <div>
+                  <p style="font-size:15px; font-weight:600; color:#0D2352; margin:0 0 4px;">How do I appeal a citation?</p>
+                  <p style="font-size:15px; color:#1A1A1A; margin:0; line-height:1.6;">File an appeal within 10 calendar days via the <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" style="color:#0D2352; font-weight:500; text-decoration:underline;">Parking Portal</a>. Decisions are final.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /accordion wrapper -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PARKING NEWS
+    ═══════════════════════════════════════════ -->
+    <section style="padding:72px 0 80px; background:#fff;">
+      <div class="max-w-[1200px] mx-auto px-5 lg:px-10">
+
+        <h2 style="font-size:clamp(28px,3vw,40px); font-weight:600; color:#0D2352; text-align:center; margin-bottom:40px; letter-spacing:-0.01em;">Parking News</h2>
+
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;" class="news-grid-3">
+
+          <!-- Card 1 -->
+          <article style="position:relative; overflow:hidden; border-radius:4px; min-height:340px; display:flex; flex-direction:column; justify-content:flex-end;">
+            <img src="images/news-gcm.jpg" alt="2026 GCM Parking Area Closures" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;" />
+            <div style="position:absolute; inset:0; background:rgba(10,20,50,0.52);"></div>
+            <div style="position:relative; z-index:2; padding:24px 20px 20px;">
+              <h3 style="font-size:22px; font-weight:700; color:#fff; line-height:1.3; text-align:center; margin-bottom:20px; text-shadow:0 1px 4px rgba(0,0,0,0.4);">2026 GCM Parking<br/>Area Closures</h3>
+              <a href="news.html"
+                 style="display:block; background:#FFDA00; color:#1A1A1A; font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; padding:14px 20px; text-align:center; border-radius:3px; text-decoration:none; transition:background 0.2s;"
+                 onmouseover="this.style.background='#e5c500'" onmouseout="this.style.background='#FFDA00'">
+                Click Here
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article style="position:relative; overflow:hidden; border-radius:4px; min-height:340px; display:flex; flex-direction:column; justify-content:flex-end;">
+            <img src="images/news-basketball.jpg" alt="2025/26 Basketball Game Day Info for Permit Holders" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;" />
+            <div style="position:absolute; inset:0; background:rgba(10,20,50,0.52);"></div>
+            <div style="position:relative; z-index:2; padding:24px 20px 20px;">
+              <h3 style="font-size:22px; font-weight:700; color:#fff; line-height:1.3; text-align:center; margin-bottom:20px; text-shadow:0 1px 4px rgba(0,0,0,0.4);">2025/26<br/>Basketball Game<br/>Day Info for<br/>Permit Holders</h3>
+              <a href="game-day.html"
+                 style="display:block; background:#FFDA00; color:#1A1A1A; font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; padding:14px 20px; text-align:center; border-radius:3px; text-decoration:none; transition:background 0.2s;"
+                 onmouseover="this.style.background='#e5c500'" onmouseout="this.style.background='#FFDA00'">
+                Click Here
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article style="position:relative; overflow:hidden; border-radius:4px; min-height:340px; display:flex; flex-direction:column; justify-content:flex-end;">
+            <img src="images/news-parking-updates.jpg" alt="Parking Updates for 2025-26 School Year" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;" />
+            <div style="position:absolute; inset:0; background:rgba(10,20,50,0.52);"></div>
+            <div style="position:relative; z-index:2; padding:24px 20px 20px;">
+              <h3 style="font-size:22px; font-weight:700; color:#fff; line-height:1.3; text-align:center; margin-bottom:20px; text-shadow:0 1px 4px rgba(0,0,0,0.4);">Parking Updates<br/>for 2025-26 School<br/>Year</h3>
+              <a href="news.html"
+                 style="display:block; background:#FFDA00; color:#1A1A1A; font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; padding:14px 20px; text-align:center; border-radius:3px; text-decoration:none; transition:background 0.2s;"
+                 onmouseover="this.style.background='#e5c500'" onmouseout="this.style.background='#FFDA00'">
+                Click Here
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         MAIN CAMPUS MAP
+    ═══════════════════════════════════════════ -->
+    <section style="padding:72px 0 80px; background:#fff;">
+      <div class="max-w-[1200px] mx-auto px-5 lg:px-10">
+
+        <h2 style="font-size:clamp(26px,3vw,42px); font-weight:600; color:#0D2352; text-align:center; margin-bottom:32px; letter-spacing:-0.01em;">ParkUToledo - Main Campus</h2>
+
+        <div style="border-radius:4px; overflow:hidden; box-shadow:0 2px 16px rgba(0,0,0,0.10);">
+          <iframe
+            src="https://www.google.com/maps/d/embed?mid=1bsXPpHXyWNrJODGz1Q0x9Q7VQoI&ehbc=2E312F"
+            width="100%"
+            height="580"
+            style="border:0; display:block;"
+            allowfullscreen=""
+            loading="lazy"
+            title="ParkUToledo - Main Campus parking map">
+          </iframe>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         HEALTH SCIENCE CAMPUS MAP
+    ═══════════════════════════════════════════ -->
+    <section style="padding:72px 0 80px; background:#F5F6F8;">
+      <div class="max-w-[1200px] mx-auto px-5 lg:px-10">
+
+        <h2 style="font-size:clamp(26px,3vw,42px); font-weight:600; color:#0D2352; text-align:center; margin-bottom:32px; letter-spacing:-0.01em;">ParkUToledo - Health Science Campus</h2>
+
+        <div style="border-radius:4px; overflow:hidden; box-shadow:0 2px 16px rgba(0,0,0,0.10);">
+          <iframe
+            src="https://www.google.com/maps/d/embed?mid=1ZaEj1rEbMTbvWdMlr3y73h7Ej4s&ehbc=2E312F"
+            width="100%"
+            height="580"
+            style="border:0; display:block;"
+            allowfullscreen=""
+            loading="lazy"
+            title="ParkUToledo - Health Science Campus parking map">
+          </iframe>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         POWERING SUCCESS BANNER
+    ═══════════════════════════════════════════ -->
+    <section style="position:relative; overflow:hidden; min-height:280px; display:flex; align-items:center; justify-content:center;">
+      <img src="images/footer-image.jpeg" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;" />
+      <div style="position:absolute; inset:0; background:rgba(13,28,70,0.72);"></div>
+      <div style="position:relative; z-index:2; text-align:center; padding:72px 24px;">
+        <p style="font-size:13px; font-weight:400; color:rgba(255,255,255,0.6); letter-spacing:0.14em; text-transform:uppercase; margin-bottom:16px;">We are driven to think smarter, tackle challenges and improve lives.</p>
+        <h2 style="font-size:clamp(36px,5vw,60px); font-weight:700; color:#fff; letter-spacing:-0.02em; margin-bottom:28px;">Powering Success</h2>
+        <a href="contact.html" class="btn-gold" style="font-size:15px; padding:14px 48px;">About Us</a>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer style="background:#0D2352;">
+    <div class="max-w-[1200px] mx-auto px-5 lg:px-10 py-16">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:48px;">
+
+        <!-- Col 1: Logo + tagline + social -->
+        <div>
+          <img src="images/footer-logo.png" alt="ParkUToledo" style="height:56px; width:auto; margin-bottom:16px; display:block;" />
+          <p style="color:#BEC6C3; font-size:14px; line-height:1.7; margin-bottom:20px;">Parking management for The University of Toledo.</p>
+          <div style="display:flex; gap:12px;">
+            <a href="#" aria-label="Facebook" style="width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; color:#BEC6C3;" onmouseover="this.style.borderColor='#FFDA00';this.style.color='#FFDA00'" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)';this.style.color='#BEC6C3'">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter / X" style="width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; color:#BEC6C3;" onmouseover="this.style.borderColor='#FFDA00';this.style.color='#FFDA00'" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)';this.style.color='#BEC6C3'">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h3 style="font-size:14px; font-weight:500; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Quick Links</h3>
+          <nav aria-label="Footer navigation">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="students.html" class="footer-link">Permit Parking</a>
+            <a href="visitors.html" class="footer-link">Visitor Parking</a>
+            <a href="citations.html" class="footer-link">Enforcement &amp; Citations</a>
+            <a href="citations.html" class="footer-link">Appeals</a>
+            <a href="contact.html" class="footer-link">FAQs</a>
+            <a href="#" class="footer-link">Employment Opportunites</a>
+            <a href="#" class="footer-link">User Guides</a>
+            <a href="news.html" class="footer-link">Parking News</a>
+            <a href="contact.html" class="footer-link">Contact Parking</a>
+            <a href="contact.html" class="footer-link">About Us</a>
+          </nav>
+        </div>
+
+        <!-- Col 3: Contact -->
+        <div>
+          <h3 style="font-size:14px; font-weight:500; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Contact</h3>
+          <address style="font-style:normal;">
+            <p style="color:#BEC6C3; font-size:14px; line-height:1.7; margin-bottom:8px;">2801 W. Bancroft St<br/>Mail Stop 107<br/>Toledo, OH 43606</p>
+            <a href="mailto:info@parkutoledo.com" class="footer-link">info@parkutoledo.com</a>
+            <p style="color:#BEC6C3; font-size:13px; line-height:1.6; margin-top:8px;">Mon–Fri: 7AM–5PM</p>
+          </address>
+        </div>
+
+        <!-- Col 4: Portal Links -->
+        <div>
+          <h3 style="font-size:14px; font-weight:500; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Parking Portals</h3>
+          <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" class="btn-gold" style="font-size:14px; padding:12px 24px; margin-bottom:12px; display:block; text-align:center;">Parking Portal</a>
+          <a href="https://parkmobile.io" target="_blank" rel="noopener" style="display:block; text-align:center; padding:10px 24px; border-radius:4px; border:1px solid rgba(255,255,255,0.25); color:#BEC6C3; font-size:14px; font-weight:400; text-decoration:none;" onmouseover="this.style.color='#FFDA00';this.style.borderColor='#FFDA00'" onmouseout="this.style.color='#BEC6C3';this.style.borderColor='rgba(255,255,255,0.25)'">ParkMobile</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer Bottom Bar -->
+    <div style="background:#091A3A; border-top:1px solid rgba(255,255,255,0.06);">
+      <div class="max-w-[1200px] mx-auto px-5 lg:px-10 py-4 flex flex-wrap justify-between items-center gap-2">
+        <p style="color:#A0ACAA; font-size:13px; margin:0;">© 2026 ParkUToledo. The University of Toledo.</p>
+        <div style="display:flex; gap:20px;">
+          <a href="#" style="color:#A0ACAA; font-size:13px; text-decoration:none;" onmouseover="this.style.color='#FFDA00'" onmouseout="this.style.color='#A0ACAA'">Privacy Policy</a>
+          <a href="#" style="color:#A0ACAA; font-size:13px; text-decoration:none;" onmouseover="this.style.color='#FFDA00'" onmouseout="this.style.color='#A0ACAA'">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Parking Categories accordion
+    function togglePC(btn) {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      // close all
+      document.querySelectorAll('.pc-btn').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        b.classList.remove('pc-btn--open');
+        const chevron = b.querySelector('.pc-chevron');
+        chevron.classList.remove('pc-chevron--up');
+        chevron.setAttribute('viewBox', '0 0 24 24');
+        chevron.querySelector('path').setAttribute('d', 'M6 9l6 6 6-6');
+        const bodyId = b.getAttribute('aria-controls');
+        document.getElementById(bodyId).style.display = 'none';
+      });
+      // open clicked if it was closed
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        btn.classList.add('pc-btn--open');
+        const chevron = btn.querySelector('.pc-chevron');
+        chevron.querySelector('path').setAttribute('d', 'M18 15l-6-6-6 6');
+        const bodyId = btn.getAttribute('aria-controls');
+        document.getElementById(bodyId).style.display = 'block';
+      }
+    }
+
+    // Mobile menu toggle
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburgerBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburgerBtn.setAttribute('aria-expanded', isOpen.toString());
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+</body>
+</html>
