@@ -17,7 +17,8 @@
   <style>
     * { font-family: 'Poppins', sans-serif; }
     .nav-link { color:#FFDA00; font-size:13px; font-weight:400; letter-spacing:0.06em; text-transform:uppercase; padding:4px 0; position:relative; text-decoration:none; transition:color 0.2s, opacity 0.2s; }
-    .nav-link:hover { opacity:0.8; }
+    .nav-link:hover { color:#fff; opacity:1; }
+    .nav-link.active { color:#fff; border-bottom:2px solid #FFDA00; padding-bottom:2px; opacity:1; }
     .nav-link-login { color:#fff; background:transparent; border:1px solid rgba(255,255,255,0.4); border-radius:3px; padding:5px 14px; font-size:13px; font-weight:400; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; transition:background 0.2s, color 0.2s; }
     .nav-link-login:hover { background:rgba(255,255,255,0.15); }
     .btn-gold { background:#FFDA00; color:#15397F; font-weight:500; font-size:15px; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; display:inline-block; text-decoration:none; transition:background 0.2s, transform 0.15s; }
@@ -58,7 +59,7 @@
       </a>
       <nav class="hidden lg:flex items-center gap-5 xl:gap-7 flex-1 justify-end mr-4" aria-label="Primary navigation">
         <a href="https://vpermit.com/parkutoledo/Account/Login" target="_blank" rel="noopener" class="nav-link-login">Log In</a>
-        <a href="students.html" class="nav-link">Permit Parking</a>
+        <a href="students.html" class="nav-link active" aria-current="page">Permit Parking</a>
         <a href="visitors.html" class="nav-link">Visitor Parking</a>
         <a href="find-parking.html" class="nav-link">Find Parking</a>
         <a href="rules-regulations.html" class="nav-link">User Guides</a>
