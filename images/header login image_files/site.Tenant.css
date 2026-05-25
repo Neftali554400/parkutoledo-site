@@ -1,0 +1,264 @@
+.MsoNormal {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.app .app-header.app-header-design-default {
+    background: #002e6d;
+    background-color: #002e6d;
+    border-bottom: 1px solid #002e6d;
+}
+
+.app .app-navigation-horizontal {
+    background-color: #002e6d;
+    background: #002e6d;
+    border-color: #002e6d;
+}
+
+.app .app-footer.app-footer-default {
+    background-color: #fff;
+    background: #fff;
+}
+
+    .app .app-footer.app-footer-default a {
+        color: #002e6d;
+    }
+
+    .app .app-footer.app-footer-default:after {
+        background: #fff;
+    }
+
+    .app .app-footer.app-footer-default .app-footer-line.darken {
+        background: #fff;
+        background-color: #fff;
+    }
+
+.app-navigation.app-navigation-style-default {
+    background: #002e6d;
+}
+
+    .app-navigation.app-navigation-style-default nav > ul > li a {
+        background: #002e6d;
+        color: #fff;
+        text-shadow: none;
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    .app-navigation.app-navigation-style-default nav > ul > li {
+        /* Line seperator between leftbar items*/
+        border-bottom: 1px solid #666;
+    }
+
+        .app-navigation.app-navigation-style-default nav > ul > li.openable.open > a {
+            /* leftbar item background when open - parent only*/
+            background: #002e6d;
+            color: #fff;
+        }
+
+        .app-navigation.app-navigation-style-default nav > ul > li ul > li > a {
+            /* leftbar item background when open childrens*/
+            background: #002e6d;
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+            .app-navigation.app-navigation-style-default nav > ul > li ul > li > a:hover,
+            .app-navigation.app-navigation-style-default nav > ul > li ul > li > a.active {
+                /* leftbar item background when over*/
+                color: #ffcd00;
+                background: #002e6d;
+            }
+
+
+        /* over colors on leftbar 1st level items*/
+
+        .app-navigation.app-navigation-style-default nav > ul > li a:hover,
+        .app-navigation.app-navigation-style-default nav > ul > li a.active {
+            color: #ffcd00;
+            background: #002e6d;
+        }
+
+
+/* over colors on top navbar*/
+.app .app-navigation-horizontal nav > ul > li > a {
+    background-color: #002e6d;
+    color: #FFF;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+    .app .app-navigation-horizontal nav > ul > li > a:hover {
+        background-color: #002e6d !important;
+        color: #ffcd00 !important;
+        border-radius: 2px;
+    }
+
+
+/* topnav selected active*/
+
+.app .app-navigation-horizontal nav > ul > li.active > a {
+    background: #002e6d;
+    color: #ffcd00;
+    border-radius: 2px;
+}
+
+.app-navigation nav > ul > li a span.nav-icon-hexa {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.app-navigation.app-navigation-minimized nav > ul > li > a span.nav-icon-hexa {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.app-navigation.app-navigation-style-default.app-navigation-minimized nav > ul > li > a > span {
+    color: #fff;
+}
+/*active left bar li - when clicked, first level*/
+
+.app-navigation.app-navigation-style-default nav > ul > li.active > a {
+    background-color: #002e6d !important;
+    color: #ffcd00 !important;
+}
+
+
+/*active left bar li - when clicked, first level*/
+
+.app-navigation.app-navigation-style-default nav > ul > li > ul > li.active > a {
+    background-color: #002e6d !important;
+    color: #ffcd00 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #2c2c2c;
+}
+
+.panel-primary > .panel-heading {
+    background-color: #002e6d;
+    border-color: #002e6d;
+}
+
+.btn {
+    font-size: 12px;
+    background-image: none;
+    background-color: #fff;
+    border-color: #e5e5e5;
+    box-shadow: none;
+    border-radius: 4px;
+    color: #555;
+    font-weight: 500;
+}
+
+    .btn.btn-primary {
+        color: #002e6d;
+        background-color: #fff;
+        border-color: #e5e5e5;
+    }
+
+        .btn.btn-primary:hover,
+        .btn.btn-primary.active,
+        .btn.btn-primary:active,
+        .btn.btn-primary:focus,
+        .btn.btn-primary:active:focus {
+            border-color: #a1c3df;
+            background: #f9f9f9;
+            color: #666;
+        }
+
+        .btn.btn-primary.btn-icon-fixed span[class^="icon-"],
+        .btn.btn-primary.btn-icon-fixed span.fa {
+            border: 1px solid #002e6d;
+            background: #002e6d;
+        }
+
+.btn-primary .btn-label {
+    background-color: #002e6d;
+    color: #fff;
+}
+
+.app-navigation.app-navigation-style-default nav > ul > li a span {
+    color: #fff;
+}
+
+.app .pagination li.active > a, .app .pagination li.active span {
+    background: #002e6d;
+    color: #FFF;
+}
+
+/*the color of the sidebar carot 0 parent note*/
+.app-navigation.app-navigation-style-default nav > ul > li.openable > a:after {
+    color: #eee;
+}
+.jumbotron {
+    background-image: url(~/../../Images/UToledo/toledo_jumbotron.jpg);
+    color: white !important;
+    height: 450px;
+    background-position-y: -105px;
+    background-position-x: 0px;
+    background-attachment: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.jumbotron h2 {
+    color: #4C6E78 !important;
+}
+
+/* Logo height variation */
+.logo {
+    height: 80px;
+}
+
+/* Button overrides */
+/* Vehicle search button sizing in menu bar
+.btn.btn-default.btn-vehiclesearch {
+    padding: 0px 15px;
+}*/
+
+/* Danger button - used in Permit screen for the cancellation button */
+/*Danger button primary state */
+.btn.btn-danger {
+    border-color: #D91215;
+    background: #D91215;
+    color: #fff;
+    
+}
+/* Danger button - icon colour control */
+.btn.btn-danger.btn-icon-fixed span[class^="icon-"],
+.btn.btn-danger.btn-icon-fixed span.fa {
+    border-right: 1px solid #D91215;
+    background: #D91215;
+}
+/* Danger button - keyboard tabbed input focus indicators */
+.btn.btn-danger:focus-visible {
+    border-color: #D91215;
+    background: #D91215;
+    color: #fff;
+    border: 2px dashed #fff !important;
+}
+
+/* Green login button - increase contrast to hit WCAG AA 2.1 compliance */
+.btn.btn-success.btn-block {
+    color: #ffffff;
+    background-color: #5E802D;
+    border-color: #5E802D;
+}
+
+.btn.btn-success.btn-block:focus-visible {
+    color: #ffffff;
+    background-color: #5E802D;
+    border-color: #5E802D;
+    border: 2px dashed #FFC675 !important;
+}
+.btn.btn-icon-fixed.btn-primary:focus-visible{
+    border-color: #ef4043;
+    background: #fff;
+    color: #000;
+    border: 2px dashed red !important;
+}

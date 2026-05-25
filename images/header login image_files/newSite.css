@@ -1,0 +1,654 @@
+﻿.app .app-header .app-header-search:after {
+    left: 1px;
+    top: 5px;
+    font-size: 25px;
+    content: "\e84e";
+}
+/*makes small icons in bootstrap tables*/
+tr > td > a[class^="btn"] {
+    padding: 1px 3px;
+    margin: 0px;
+    line-height: unset;
+}
+/*just incase we use the customized theme for non auth*/
+.app .app-navigation-horizontal nav > ul {
+    margin: 4px 0px 4px 0px;
+    padding: 0px 0px 0px 0px;
+}
+/*padding of the sandwitch in top navigation*/
+    .app .app-navigation-horizontal nav > ul > li.hidden-mobile > a.btn.btn-link.btn-icon {
+        padding: 8px 10px 12px 10px;
+    }
+
+    .app .app-navigation-horizontal nav > ul > li.active > a {
+        /*background: #FFF;*/
+        -webkit-border-top-right-radius: 3px;
+        -webkit-border-bottom-right-radius: 0px;
+        -webkit-border-bottom-left-radius: 0px;
+        -webkit-border-top-left-radius: 3px;
+        -moz-border-radius-topright: 3px;
+        -moz-border-radius-bottomright: 0px;
+        -moz-border-radius-bottomleft: 0px;
+        -moz-border-radius-topleft: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 3px;
+    }
+    /*highlight selected (the open parent is in theme/js/app.js)*/
+nav > ul > li.active > a,
+nav > ul > li.openable.open > ul > li.active > a {
+    color: #FFF !important
+}
+
+.app-header.app-header-design-default > a > img.img-responsive {
+    max-height: 75px;
+    margin: 5px;
+}
+.app-header.app-header-design-default >div> a > img.img-responsive {
+    max-height: 75px;
+    margin: 5px;
+}
+
+.app .app-header {
+    height: unset;
+}
+input,
+select,
+textarea {
+    max-width: 300px;
+}
+
+.form-group >div> input, .form-group >div> select, .form-group >div> textarea {
+    max-width: 280px;
+}
+label.form-control {
+    max-width: 280px;
+}
+/*Change the size of the left bar to be 250 and not 300*/
+.app .app-container .app-sidebar {
+    width: 250px;
+}
+.app .app-container .app-content.app-sidebar-left {
+    padding-left: 250px;
+}
+.app .app-container .app-content.app-sidebar-right {
+    padding-right: 250px;
+}
+/*@media (min-width: 768px) {
+    .navbar-form .input-group {
+        display: block;
+    }
+}*/
+@media (max-width: 992px) {
+    .app .app-container .app-content.app-sidebar-left {
+        padding-left: 0px;
+    }
+    .app .app-container .app-sidebar {
+        width: 100%;
+    }
+    /*.input-group { //this was removed due to Claims page for claimable events shrinking the icon of fields 
+        display: block;
+    }*/
+    .navbar-form {
+        margin: unset;
+        padding: 10px 15px;
+        border-top: unset; 
+        border-bottom: unset;
+        -webkit-box-shadow: unset; 
+    }
+}
+/*Change the size of the left bar to be 250 and not 300*/
+.app .table > thead > tr > th {
+    text-transform: inherit;
+}
+.app-container{
+    background-color: #fff!important;
+}
+.app .app-login-box {
+    width: 320px;
+    margin: 5px auto;
+}
+.jumbotron {
+    background-color: #eee;
+}
+.app .app-navigation-horizontal .container.container-boxed:before {
+    background: inherit;
+}
+.app .app-footer.app-footer-default .app-footer-line.darken {
+    background: inherit;
+}
+
+/*RTL*/
+.dir-right ul li,
+.dir-right ol li {
+    float: right;
+}
+.dir-left ul li,
+.dir-left ol li {
+    float: left;
+}
+.dir-right .pull-right {
+    float: left !important;
+}.dir-left .pull-right {
+    float: right !important;
+}
+.dir-right .pull-left {
+    float: right !important;
+}.dir-left .pull-left {
+    float: left !important;
+}
+
+.dir-right .btn.btn-icon span {
+    float: right!important;
+}
+.dir-left .btn.btn-icon span {
+    float: left !important;
+}
+/*fix form-control to stick to the right*/
+.dir-right .col-md-1,
+.dir-right .col-md-2,
+.dir-right .col-md-3,
+.dir-right .col-md-4,
+.dir-right .col-md-5,
+.dir-right .col-md-6,
+.dir-right .col-md-7,
+.dir-right .col-md-8,
+.dir-right .col-md-9,
+.dir-right .col-md-10,
+.dir-right .col-md-11,
+.dir-right .col-md-12,
+.dir-right .col-sm-1,
+.dir-right .col-sm-2,
+.dir-right .col-sm-3,
+.dir-right .col-sm-4,
+.dir-right .col-sm-5,
+.dir-right .col-sm-6,
+.dir-right .col-sm-7,
+.dir-right .col-sm-8,
+.dir-right .col-sm-9,
+.dir-right .col-sm-10,
+.dir-right .col-sm-11,
+.dir-right .col-sm-12,
+.dir-right .col-xs-1,
+.dir-right .col-xs-2,
+.dir-right .col-xs-3,
+.dir-right .col-xs-4,
+.dir-right .col-xs-5,
+.dir-right .col-xs-6,
+.dir-right .col-xs-7,
+.dir-right .col-xs-8,
+.dir-right .col-xs-9,
+.dir-right .col-xs-10,
+.dir-right .col-xs-11,
+.dir-right .col-xs-12 {
+    float: right;
+}
+/*Fix form-group labels stop stick to the right as it used to be. new template overite it for some reason*/
+.dir-left .form-horizontal .control-label {
+    text-align: right;
+}
+
+.app .app-navigation-horizontal nav > ul > li > a {
+    float: left;
+    padding: 10px 15px 12px 15px;
+}
+.dir-right .app .app-navigation-horizontal nav > ul > li > a span[class^="icon-"], .dir-right .app .app-navigation-horizontal nav > ul > li > a .fa {
+    float: right;
+    margin-left: 5px;
+    margin-right: 0px;
+}
+.dir-left .app .app-navigation-horizontal nav > ul > li > a span[class^="icon-"], .dir-left .app .app-navigation-horizontal nav > ul > li > a .fa {
+    float: left;
+    margin-right: 5px;
+    margin-left: 0px;
+}
+/*change table column sorting RTL*/
+/*.dir-right .fixed-table-container thead th .both {
+    background-position: left;
+ }*/
+.dir-right .fixed-table-container thead th .sortable {
+    background-position: left;
+    padding-left: 30px;
+}
+/*table header*/
+.dir-right th{
+    text-align: right!important;
+}
+/*opposite margin and padding*/
+.dir-right .margin-left-0 {
+    margin-right: 0px !important;
+}
+.dir-right .margin-left-5 {
+    margin-right: 5px !important;
+}
+.dir-right .margin-left-10 {
+    margin-right: 10px !important;
+}
+.dir-right .margin-left-15 {
+    margin-right: 15px !important;
+}
+.dir-right .margin-left-20 {
+    margin-right: 20px !important;
+}
+.dir-right .margin-left-30 {
+    margin-right: 30px !important;
+}
+.dir-right .margin-left-40 {
+    margin-right: 40px !important;
+}
+.dir-right .margin-left-50 {
+    margin-right: 50px !important;
+}
+.dir-right .margin-right-0 {
+    margin-left: 0px !important;
+}
+.dir-right .margin-right-5 {
+    margin-left: 5px !important;
+}
+.dir-right .margin-right-10 {
+    margin-left: 10px !important;
+}
+.dir-right .margin-right-15 {
+    margin-left: 15px !important;
+}
+.dir-right .margin-right-20 {
+    margin-left: 20px !important;
+}
+.dir-right .margin-right-30 {
+    margin-left: 30px !important;
+}
+.dir-right .margin-right-40 {
+    margin-left: 40px !important;
+}
+.dir-right .margin-right-50 {
+    margin-left: 50px !important;
+}
+.dir-right .padding-left-0 {
+    padding-right: 0px !important;
+}
+.dir-right .padding-left-5 {
+    padding-right: 5px !important;
+}
+.dir-right .padding-left-10 {
+    padding-right: 10px !important;
+}
+.dir-right .padding-left-15 {
+    padding-right: 15px !important;
+}
+.dir-right .padding-left-20 {
+    padding-right: 20px !important;
+}
+.dir-right .padding-left-30 {
+    padding-right: 30px !important;
+}
+.dir-right .padding-left-40 {
+    padding-right: 40px !important;
+}
+.dir-right .padding-left-50 {
+    padding-right: 50px !important;
+}
+.dir-right .padding-right-0 {
+    padding-left: 0px !important;
+}
+.dir-right .padding-right-5 {
+    padding-left: 5px !important;
+}
+.dir-right .padding-right-10 {
+    padding-left: 10px !important;
+}
+.dir-right .padding-right-15 {
+    padding-left: 15px !important;
+}
+.dir-right .padding-right-20 {
+    padding-left: 20px !important;
+}
+.dir-right .padding-right-30 {
+    padding-left: 30px !important;
+}
+.dir-right .padding-right-40 {
+    padding-left: 40px !important;
+}
+.dir-right .padding-right-50 {
+    padding-left: 50px !important;
+}
+/*original but with dir-left because it given this also and i dont want to unset it*/
+.dir-left .margin-left-0 {
+    margin-left: 0px !important;
+}
+.dir-left .margin-left-5 {
+    margin-left: 5px !important;
+}
+.dir-left .margin-left-10 {
+    margin-left: 10px !important;
+}
+.dir-left .margin-left-15 {
+    margin-left: 15px !important;
+}
+.dir-left .margin-left-20 {
+    margin-left: 20px !important;
+}
+.dir-left .margin-left-30 {
+    margin-left: 30px !important;
+}
+.dir-left .margin-left-40 {
+    margin-left: 40px !important;
+}
+.dir-left .margin-left-50 {
+    margin-left: 50px !important;
+}
+.dir-left .margin-right-0 {
+    margin-right: 0px !important;
+}
+.dir-left .margin-right-5 {
+    margin-right: 5px !important;
+}
+.dir-left .margin-right-10 {
+    margin-right: 10px !important;
+}
+.dir-left .margin-right-15 {
+    margin-right: 15px !important;
+}
+.dir-left .margin-right-20 {
+    margin-right: 20px !important;
+}
+.dir-left .margin-right-30 {
+    margin-right: 30px !important;
+}
+.dir-left .margin-right-40 {
+    margin-right: 40px !important;
+}
+.dir-left .margin-right-50 {
+    margin-right: 50px !important;
+}
+.dir-left .padding-0 {
+    padding: 0px !important;
+}
+.dir-left .padding-left-0 {
+    padding-left: 0px !important;
+}
+.dir-left .padding-left-5 {
+    padding-left: 5px !important;
+}
+.dir-left .padding-left-10 {
+    padding-left: 10px !important;
+}
+.dir-left .padding-left-15 {
+    padding-left: 15px !important;
+}
+.dir-left .padding-left-20 {
+    padding-left: 20px !important;
+}
+.dir-left .padding-left-30 {
+    padding-left: 30px !important;
+}
+.dir-left .padding-left-40 {
+    padding-left: 40px !important;
+}
+.dir-left .padding-left-50 {
+    padding-left: 50px !important;
+}
+.dir-left .padding-right-0 {
+    padding-right: 0px !important;
+}
+.dir-left .padding-right-5 {
+    padding-right: 5px !important;
+}
+.dir-left .padding-right-10 {
+    padding-right: 10px !important;
+}
+.dir-left .padding-right-15 {
+    padding-right: 15px !important;
+}
+.dir-left .padding-right-20 {
+    padding-right: 20px !important;
+}
+.dir-left .padding-right-30 {
+    padding-right: 30px !important;
+}
+.dir-left .padding-right-40 {
+    padding-right: 40px !important;
+}
+.dir-left .padding-right-50 {
+    padding-right: 50px !important;
+}
+/*fix pagination table items in page button down*/
+.page-list .dropdown,
+.page-list .dropup {
+    float: none;
+}
+/*fix missing left table border on right-to-left*/
+.dir-right .fixed-table-container thead th:first-child ,
+.dir-right .fixed-table-container tbody td:first-child {
+    border-left-color: rgb(221,221,221);
+    border-left-style:solid;
+    border-left-width:1px;
+}
+/*RTL checkbox radiobox alignment for RTL*/
+.dir-right .radio input[type="radio"],
+.dir-right .radio-inline input[type="radio"],
+.dir-right .checkbox input[type="checkbox"],
+.dir-right .checkbox-inline input[type="checkbox"] {
+    margin-right: -20px;
+}
+.dir-right .radio-inline, .checkbox-inline {
+    padding-right: 20px;
+}
+
+/*Small icons in titles RTL*/
+.dir-right h1 [class^="icon-"],
+.dir-right h2 [class^="icon-"],
+.dir-right h3 [class^="icon-"],
+.dir-right h4 [class^="icon-"],
+.dir-right h5 [class^="icon-"],
+.dir-right h6 [class^="icon-"],
+.dir-right h1 .fa,
+.dir-right h2 .fa,
+.dir-right h3 .fa,
+.dir-right h4 .fa,
+.dir-right h5 .fa,
+.dir-right h6 .fa {
+    float: right;
+    margin-left: 10px;
+}
+
+.dir-right h1 .fa-text,
+.dir-right h2 .fa-text,
+.dir-right h3 .fa-text,
+.dir-right h4 .fa-text,
+.dir-right h5 .fa-text,
+.dir-right h6 .fa-text {
+    float: right;
+}
+
+.dir-left h1 .fa-text,
+.dir-left h2 .fa-text,
+.dir-left h3 .fa-text,
+.dir-left h4 .fa-text,
+.dir-left h5 .fa-text,
+.dir-left h6 .fa-text {
+    float: left;
+}
+/*Fix bootstrap-select RTL*/
+.dir-left .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+    text-align: left;
+}
+.dir-right .bootstrap-select.btn-group .dropdown-toggle .filter-option {
+    text-align: right;
+}
+.dir-left .fixed-table-toolbar .dropdown-menu {
+    text-align: left;
+}
+.dir-right .fixed-table-toolbar .dropdown-menu {
+    text-align: right;
+}
+.dir-right .bootstrap-select .dropdown-toggle .caret {
+    right: auto !important;
+}
+/* Styles for validation helpers - good for department edit when using UserProfile share with individual
+-----------------------------------------------------------*/
+.field-validation-error :not(.alert){
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-errors >ul>li{
+    font-weight: bold;
+    color: #FFF;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+/*for example confirmation pop up*/
+.dir-right h1, h2, h3, h4, h5, h6 {
+    float: right;
+}
+.dir-left h1, h2, h3, h4, h5, h6 {
+    float: left;
+}
+.dir-right .close {
+    float: left;
+}
+/*panel title*/
+.dir-right .app .panel > .panel-heading .panel-title {
+    float: right;
+}
+/*fix RTL icon on side menu */
+.app.app-rtl .app-navigation nav > ul > li a span {
+    margin: 6px 0px 0px 15px;
+}
+.dir-left .input-group-btn{
+    float:left;
+}
+.dir-right .input-group-btn {
+    float: right;
+}
+.dir-right .input-group .form-control {
+    float: right;
+}
+/*display of selected dropdown like applicant types/zones*/
+.socialtag {
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.socialtag > .label {
+    text-transform: none !important;
+    margin-right: 3px;
+    margin-bottom: 1px;
+}
+/*missing gap of socialtags in panels*/
+.panel-body .socialtag > .label {
+    margin-right: 3px;
+    margin-bottom: 1px;
+}
+/*makes dropdown size as form-control*/
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 280px;
+}
+.alert-warning .alert-heading {
+    font-weight: 700;
+}
+/* For forms that we want to have few items same line just add this to each pair of form-group div as in MyCitations*/
+.form-inline .form-toolbar {
+    display: contents !important;
+}
+.btn-vehiclesearch {
+    height: 30px;
+    width: 30px;
+    padding: 2px;
+}
+/* Skip to main  content tab link*/
+.skip-to-content {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.skip-to-content:focus {
+	position: static;
+	width: auto;
+	height: auto;
+	overflow: visible;
+}
+
+/* Targets <a> within .panel-heading within .panel for collapsed state */
+@font-face {
+    font-family: 'linearicons';
+    src: url('../Theme/css/fonts/Linearicons-Free.eot?w118d');
+    src: url('../Theme/css/fonts/Linearicons-Free.eot?#iefixw118d') format('embedded-opentype'), url('../Theme/css/fonts/Linearicons-Free.woff2?w118d') format('woff2'), url('../Theme/css/fonts/Linearicons-Free.woff?w118d') format('woff'), url('../Theme/css/fonts/Linearicons-Free.ttf?w118d') format('truetype'), url('../Theme/css/fonts/Linearicons-Free.svg?w118d#Linearicons-Free') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.panel .panel-heading span[data-toggle="collapse"][aria-expanded="true"]:after {
+    line-height: 30px;
+    padding: 10px;
+    width: 40px;
+    font-size: 10px;
+    content: "\e873";
+    font-family: "linearicons";
+    text-align: center;
+    -webkit-transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Targets <a> within .panel-heading within .panel for expanded state */
+.panel .panel-heading span[data-toggle="collapse"][aria-expanded="false"].collapsed:after {
+    line-height: 30px;
+    padding: 10px;
+    width: 40px;
+    font-size: 10px;
+    content: "\e874";
+    font-family: "linearicons";
+    text-align: center;
+    -webkit-transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+}
+/* TEMP - this is used for claims events after adding a state dropdown */
+.form-group > div.input-group-rego > input,
+.form-group > div.input-group-rego > select {
+    max-width: 140px;
+}
+/* overide textarea width for html edit when eiditng code in WYSIWYG editor*/
+textarea.note-codable {
+    max-width: unset !important;
+}
+/* resize WYSIWYG editor - cms edit contents and broadcast edit*/
+.note-editable.panel-body{
+    resize:vertical;
+}
+/* For placeholders list in broadcast template WYSIWYG*/
+.dropdown-menu.dropdown-template > li > a {
+    padding: 2px 5px;
+    line-height: normal;
+}
+.align-center-horizontal {
+    display: flex;
+    justify-content: center;
+}
+/*Department managers edit using select2. This overide stuff*/
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #e4e4e4;
+    color: #333;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    color: #999;
+}

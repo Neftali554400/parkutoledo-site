@@ -1,0 +1,125 @@
+/* Minification failed. Returning unminified contents.
+(17,5-11): run-time warning JS1028: Expected identifier or string: export
+ */
+$('form .v3').on('submit',
+    function (e) {
+        var $form = $(this);
+        $form.find('input, textarea').prop('readonly', true);
+        $form.find('button, .btn').attr('disabled', 'disabled');
+    });
+window.icons = {
+    refresh: 'fa-refresh',
+    columns: 'fa-th-list',
+    paginationSwitchDown: 'fa-caret-square-down',
+    paginationSwitchUp: 'fa-caret-square-up',
+    toggleOff: 'fa-toggle-off',
+    toggleOn: 'fa-toggle-on',
+    fullscreen: 'fa-arrows-alt',
+    detailOpen: 'fa-plus',
+    detailClose: 'fa-minus',
+    export: 'fa-download'
+}
+function anchorWithConfirmation(newUrl, el, confirmMsg) {
+    if (confirmMsg.length > 0) {
+        if (confirm(confirmMsg) == true)
+            $('#getForm').attr('action', newUrl).attr('method', 'post').submit();
+    } else
+        $('#getForm').attr('action', newUrl).attr('method', 'post').submit();
+
+};function yesOnlyFormatter(value, row, index) {
+    return value ? "Yes" : "";
+}
+
+function yesNoFormatter(value, row, index) {
+    return value ? "Yes" : "No";
+}
+
+function uppercaseFormatter(value, row, index) {
+    return value === undefined || value === null ? null : value.toUpperCase();
+}
+
+function errorFormatter(value, row, index) {
+    return value === undefined || value === null ? "-" : value.substr(0, 100);
+}
+
+function decimal2Formatter(value, row, index) {
+    if (value === undefined || value === null || value === 0) {
+        return null;
+    }
+
+    return "$" + value.toFixed(2);
+}
+function decimal2W0Formatter(value, row, index) {
+    if (value === undefined || value === null) {
+        return null;
+    }
+
+    return "$" + value.toFixed(2);
+}
+
+function stringFormatter(sz, value, row, index) {
+    if (value === undefined || value === null) {
+        return null;
+    }
+
+    if (value.length < sz) {
+        return value;
+    }
+
+    return "<div title='" + value + "'>" + value.substr(0, sz) + "...</div>";
+}
+
+function string20Formatter(value, row, index) {
+    return stringFormatter(20, value, row, index);
+}
+
+function string30Formatter(value, row, index) {
+    return stringFormatter(30, value, row, index);
+}
+
+function string40Formatter(value, row, index) {
+    return stringFormatter(40, value, row, index);
+}
+
+function string80Formatter(value, row, index) {
+    return stringFormatter(80, value, row, index);
+}
+
+function infiniteFormatter(value, row, index) {
+    if (value === undefined || value === null) {
+        return "-";
+    }
+
+    return value > 2147483640 ? "&infin;" : value;
+}
+
+function dateOnlyFormatter(value, row, index) {
+    if (value === undefined || value === null) {
+        return "";
+    }
+    var desiredLocale = document.documentElement.lang.toLowerCase();
+    moment.locale(desiredLocale);
+    var a = moment(value, "YYYYMMDDhhmmss");
+    return a.format('L');
+}
+
+function dateFormatter(value, row, index) {
+    if (value === undefined || value === null) {
+        return "";
+    }
+    var desiredLocale = document.documentElement.lang.toLowerCase();
+    moment.locale(desiredLocale);
+    var a = moment(value, "YYYYMMDDhhmmss");
+    return a.format('L LT');
+}
+
+function specialDateFormatter(value, row, index) {
+    if (value === undefined || value === null) {
+        return "";
+    }
+    var desiredLocale = document.documentElement.lang.toLowerCase();
+    moment.locale(desiredLocale);
+    var a = moment(value, "YYYYMMDDhhmmss");
+    return row.IsTime ? a.format('L LT') : a.format('L');
+}
+;

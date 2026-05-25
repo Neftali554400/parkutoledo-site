@@ -17,9 +17,9 @@
     .nav-link:hover { color:#FFDA00; }
     .nav-link::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:#FFDA00; transition:width 0.2s; }
     .nav-link:hover::after { width:100%; }
-    .btn-gold { background:#FFDA00; color:#15397F; font-weight:600; font-size:15px; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; display:inline-block; text-decoration:none; transition:background 0.2s, transform 0.15s; }
+    .btn-gold { background:#FFDA00; color:#15397F; font-weight:500; font-size:15px; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; display:inline-block; text-decoration:none; transition:background 0.2s, transform 0.15s; }
     .btn-gold:hover { background:#e5c500; transform:translateY(-1px); }
-    .btn-primary { background:#15397F; color:#fff; font-weight:500; font-size:15px; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; display:inline-block; text-decoration:none; transition:background 0.2s; }
+    .btn-primary { background:#15397F; color:#fff; font-weight:400; font-size:15px; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; display:inline-block; text-decoration:none; transition:background 0.2s; }
     .btn-primary:hover { background:#0D2352; }
     .permit-card { background:#fff; border:1px solid #BEC6C3; border-radius:8px; padding:32px; box-shadow:0 2px 12px rgba(0,0,0,0.07); }
     .notice-callout { background:#FFF8CC; border-left:4px solid #FFDA00; padding:16px 20px; border-radius:4px; }
@@ -28,13 +28,13 @@
     #mobile-menu { display:none; }
     #mobile-menu.open { display:block; }
     a:focus-visible, button:focus-visible { outline:2px solid #FFDA00; outline-offset:2px; border-radius:2px; }
-    .accordion-btn { width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #BEC6C3; padding:18px 0; font-size:16px; font-weight:500; color:#15397F; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+    .accordion-btn { width:100%; text-align:left; background:none; border:none; border-bottom:1px solid #BEC6C3; padding:18px 0; font-size:16px; font-weight:400; color:#15397F; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
     .accordion-btn:hover { color:#0D2352; }
     .accordion-content { display:none; padding:16px 0 20px; font-size:15px; color:#A0ACAA; line-height:1.7; }
     .accordion-content.open { display:block; }
     .accordion-icon { transition:transform 0.2s; }
     .accordion-btn.active .accordion-icon { transform:rotate(180deg); }
-    .step-number { width:44px; height:44px; border-radius:50%; background:#15397F; color:#fff; font-size:18px; font-weight:600; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .step-number { width:44px; height:44px; border-radius:50%; background:#15397F; color:#fff; font-size:18px; font-weight:500; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
   </style>
 </head>
 <body class="bg-white text-ut-text">
@@ -43,9 +43,9 @@
     <div class="max-w-[1200px] mx-auto px-5 lg:px-10 h-full flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
         <div class="bg-white rounded px-3 py-1.5 flex items-center gap-2">
-          <span style="font-size:18px; font-weight:600; color:#15397F;">Park</span>
-          <span style="font-size:18px; font-weight:600; color:#FFDA00; background:#15397F; padding:0 4px;">U</span>
-          <span style="font-size:18px; font-weight:600; color:#15397F;">Toledo</span>
+          <span style="font-size:18px; font-weight:500; color:#15397F;">Park</span>
+          <span style="font-size:18px; font-weight:500; color:#FFDA00; background:#15397F; padding:0 4px;">U</span>
+          <span style="font-size:18px; font-weight:500; color:#15397F;">Toledo</span>
         </div>
       </a>
       <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
@@ -82,10 +82,10 @@
 
   <section style="background:linear-gradient(135deg,#15397F 0%,#0D2352 100%); padding:60px 0 64px;">
     <div class="max-w-[1200px] mx-auto px-5 lg:px-10">
-      <p style="color:#FFDA00; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px;">
+      <p style="color:#FFDA00; font-size:13px; font-weight:400; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px;">
         <a href="index.html" style="color:#BEC6C3; text-decoration:none;">Home</a> &rsaquo; Citations
       </p>
-      <h1 style="font-size:clamp(32px,4vw,48px); font-weight:600; color:#fff; letter-spacing:-0.02em; margin-bottom:12px;">Parking Citations</h1>
+      <h1 style="font-size:clamp(32px,4vw,48px); font-weight:500; color:#fff; letter-spacing:-0.02em; margin-bottom:12px;">Parking Citations</h1>
       <p style="font-size:18px; color:#BEC6C3; max-width:600px; line-height:1.6;">Pay your citation, understand enforcement hours, or file an appeal through the ParkUToledo portal.</p>
     </div>
   </section>
@@ -98,7 +98,7 @@
         <div style="display:flex; align-items:flex-start; gap:16px;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFDA00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           <div>
-            <h2 style="font-size:18px; font-weight:600; color:#1A1A1A; margin-bottom:8px;">Parking Enforcement Hours</h2>
+            <h2 style="font-size:18px; font-weight:500; color:#1A1A1A; margin-bottom:8px;">Parking Enforcement Hours</h2>
             <p style="font-size:15px; color:#1A1A1A; line-height:1.6; margin:0;">
               <strong>Monday – Friday:</strong> 7:00 AM – 10:00 PM<br/>
               <strong>Saturday – Sunday:</strong> 9:00 AM – 5:00 PM<br/>
@@ -115,33 +115,33 @@
       </div>
 
       <!-- How It Works -->
-      <h2 style="font-size:28px; font-weight:500; color:#15397F; margin-bottom:32px;">How the Citation Process Works</h2>
+      <h2 style="font-size:28px; font-weight:400; color:#15397F; margin-bottom:32px;">How the Citation Process Works</h2>
       <div style="display:flex; flex-direction:column; gap:28px; margin-bottom:64px;">
         <div style="display:flex; gap:20px; align-items:flex-start;">
           <div class="step-number">1</div>
           <div>
-            <h3 style="font-size:18px; font-weight:500; color:#15397F; margin-bottom:6px;">Receive a Notice</h3>
+            <h3 style="font-size:18px; font-weight:400; color:#15397F; margin-bottom:6px;">Receive a Notice</h3>
             <p style="font-size:15px; color:#A0ACAA; line-height:1.7;">A citation is placed on your vehicle or sent electronically to the registered vehicle owner. The notice includes the citation number, violation, amount due, and the deadline to pay or appeal.</p>
           </div>
         </div>
         <div style="display:flex; gap:20px; align-items:flex-start;">
           <div class="step-number">2</div>
           <div>
-            <h3 style="font-size:18px; font-weight:500; color:#15397F; margin-bottom:6px;">Log In to the Portal</h3>
+            <h3 style="font-size:18px; font-weight:400; color:#15397F; margin-bottom:6px;">Log In to the Portal</h3>
             <p style="font-size:15px; color:#A0ACAA; line-height:1.7;">Visit <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" style="color:#005CB9;">vpermit.com/parkutoledo</a> and log in with your UTAD credentials (students/staff) or citation number (visitors). Navigate to the Citations section to view your violation details.</p>
           </div>
         </div>
         <div style="display:flex; gap:20px; align-items:flex-start;">
           <div class="step-number">3</div>
           <div>
-            <h3 style="font-size:18px; font-weight:500; color:#15397F; margin-bottom:6px;">Pay or Submit an Appeal</h3>
+            <h3 style="font-size:18px; font-weight:400; color:#15397F; margin-bottom:6px;">Pay or Submit an Appeal</h3>
             <p style="font-size:15px; color:#A0ACAA; line-height:1.7;">Pay your citation securely online, or submit an appeal if you believe the citation was issued in error. Appeals must be filed within 10 calendar days of the citation date.</p>
           </div>
         </div>
       </div>
 
       <!-- Appeals Accordion -->
-      <h2 style="font-size:28px; font-weight:500; color:#15397F; margin-bottom:8px;">Citation Appeals</h2>
+      <h2 style="font-size:28px; font-weight:400; color:#15397F; margin-bottom:8px;">Citation Appeals</h2>
       <div style="margin-top:16px; margin-bottom:64px;">
         <div class="accordion-item">
           <button class="accordion-btn" aria-expanded="false">
@@ -186,7 +186,7 @@
         <div style="display:flex; gap:16px; align-items:flex-start;">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#15397F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:4px;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           <div>
-            <h3 style="font-size:20px; font-weight:500; color:#15397F; margin-bottom:12px;">Immobilization (Booting)</h3>
+            <h3 style="font-size:20px; font-weight:400; color:#15397F; margin-bottom:12px;">Immobilization (Booting)</h3>
             <p style="font-size:15px; color:#1A1A1A; line-height:1.7; margin-bottom:12px;">
               Vehicles with <strong>3 or more unpaid citations</strong> are subject to immobilization. A boot will be placed on the vehicle, preventing it from being driven.
             </p>
@@ -201,11 +201,11 @@
 
       <!-- Rules PDF Download -->
       <div style="text-align:center; padding:48px; background:#F5F6F8; border-radius:8px;">
-        <h3 style="font-size:22px; font-weight:500; color:#15397F; margin-bottom:8px;">Parking Rules &amp; Regulations</h3>
+        <h3 style="font-size:22px; font-weight:400; color:#15397F; margin-bottom:8px;">Parking Rules &amp; Regulations</h3>
         <p style="font-size:15px; color:#A0ACAA; margin-bottom:24px;">Review the complete parking rules, violation codes, and fine schedule.</p>
         <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
           <a href="rules-regulations.html" class="btn-primary">View Rules &amp; Regulations</a>
-          <a href="https://content.parkutoledo.com/media/kpbbtlt0/parkutoledo-parking-rules-and-regulations.pdf" target="_blank" rel="noopener" style="background:transparent; color:#15397F; font-weight:500; font-size:15px; padding:14px 32px; border-radius:4px; border:2px solid #15397F; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:background 0.2s, color 0.2s;" onmouseover="this.style.background='#15397F';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#15397F'">
+          <a href="https://content.parkutoledo.com/media/kpbbtlt0/parkutoledo-parking-rules-and-regulations.pdf" target="_blank" rel="noopener" style="background:transparent; color:#15397F; font-weight:400; font-size:15px; padding:14px 32px; border-radius:4px; border:2px solid #15397F; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:background 0.2s, color 0.2s;" onmouseover="this.style.background='#15397F';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#15397F'">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download PDF
           </a>
@@ -220,14 +220,14 @@
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:48px;">
         <div>
           <div class="bg-white inline-flex rounded px-3 py-2 mb-4" style="gap:4px; align-items:center;">
-            <span style="font-size:16px; font-weight:600; color:#15397F;">Park</span>
-            <span style="font-size:16px; font-weight:600; color:#FFDA00; background:#15397F; padding:0 3px;">U</span>
-            <span style="font-size:16px; font-weight:600; color:#15397F;">Toledo</span>
+            <span style="font-size:16px; font-weight:500; color:#15397F;">Park</span>
+            <span style="font-size:16px; font-weight:500; color:#FFDA00; background:#15397F; padding:0 3px;">U</span>
+            <span style="font-size:16px; font-weight:500; color:#15397F;">Toledo</span>
           </div>
           <p style="color:#BEC6C3; font-size:14px; line-height:1.7;">Parking management for The University of Toledo.</p>
         </div>
         <div>
-          <h3 style="font-size:14px; font-weight:500; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Quick Links</h3>
+          <h3 style="font-size:14px; font-weight:400; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Quick Links</h3>
           <a href="students.html" class="footer-link">Students</a>
           <a href="faculty-staff.html" class="footer-link">Faculty &amp; Staff</a>
           <a href="visitors.html" class="footer-link">Visitors</a>
@@ -236,12 +236,12 @@
           <a href="contact.html" class="footer-link">Contact</a>
         </div>
         <div>
-          <h3 style="font-size:14px; font-weight:500; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Contact</h3>
+          <h3 style="font-size:14px; font-weight:400; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Contact</h3>
           <p style="color:#BEC6C3; font-size:14px; line-height:1.7; margin-bottom:8px;">2801 W. Bancroft St<br/>Toledo, OH 43606</p>
           <a href="mailto:info@parkutoledo.com" class="footer-link">info@parkutoledo.com</a>
         </div>
         <div>
-          <h3 style="font-size:14px; font-weight:500; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Portal</h3>
+          <h3 style="font-size:14px; font-weight:400; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Portal</h3>
           <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" class="btn-gold" style="font-size:14px; padding:12px 24px; display:block; text-align:center;">Parking Portal</a>
         </div>
       </div>

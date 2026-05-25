@@ -16,7 +16,7 @@
     .nav-link:hover { color:#FFDA00; }
     .nav-link::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:#FFDA00; transition:width 0.2s; }
     .nav-link:hover::after { width:100%; }
-    .btn-gold { background:#FFDA00; color:#15397F; font-weight:600; font-size:15px; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; display:inline-block; text-decoration:none; transition:background 0.2s, transform 0.15s; }
+    .btn-gold { background:#FFDA00; color:#15397F; font-weight:500; font-size:15px; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; display:inline-block; text-decoration:none; transition:background 0.2s, transform 0.15s; }
     .btn-gold:hover { background:#e5c500; transform:translateY(-1px); }
     .footer-link { color:#BEC6C3; font-size:14px; text-decoration:none; transition:color 0.2s; display:block; margin-bottom:8px; }
     .footer-link:hover { color:#FFDA00; }
@@ -28,21 +28,21 @@
       transition:border-color 0.2s, box-shadow 0.2s;
     }
     .form-input:focus { border-color:#15397F; box-shadow:0 0 0 3px rgba(21,57,127,0.12); }
-    .form-label { display:block; font-size:14px; font-weight:500; color:#0D2352; margin-bottom:6px; }
+    .form-label { display:block; font-size:14px; font-weight:400; color:#0D2352; margin-bottom:6px; }
     .divider { display:flex; align-items:center; gap:16px; margin:28px 0; }
     .divider::before, .divider::after { content:''; flex:1; height:1px; background:#E0E3E8; }
-    .divider span { font-size:13px; color:#A0ACAA; font-weight:500; white-space:nowrap; }
+    .divider span { font-size:13px; color:#A0ACAA; font-weight:400; white-space:nowrap; }
     .btn-utoledo {
       display:flex; align-items:center; justify-content:center; gap:12px;
       width:100%; padding:14px 24px; border-radius:4px;
-      background:#0D2352; color:#fff; font-size:15px; font-weight:600;
+      background:#0D2352; color:#fff; font-size:15px; font-weight:500;
       text-decoration:none; border:none; cursor:pointer;
       transition:background 0.2s, transform 0.15s;
     }
     .btn-utoledo:hover { background:#15397F; transform:translateY(-1px); }
     .btn-submit {
       width:100%; padding:13px 24px; border-radius:4px;
-      background:#FFDA00; color:#15397F; font-size:15px; font-weight:600;
+      background:#FFDA00; color:#15397F; font-size:15px; font-weight:500;
       border:none; cursor:pointer;
       transition:background 0.2s, transform 0.15s;
     }
@@ -55,16 +55,16 @@
 <body class="bg-ut-bg-light text-ut-text">
 
   <!-- Skip to content -->
-  <a href="#content" style="position:absolute;left:-9999px;top:4px;z-index:999;background:#FFDA00;color:#15397F;padding:8px 16px;border-radius:4px;font-weight:600;font-size:14px;" onfocus="this.style.left='4px'" onblur="this.style.left='-9999px'">Skip to main content</a>
+  <a href="#content" style="position:absolute;left:-9999px;top:4px;z-index:999;background:#FFDA00;color:#15397F;padding:8px 16px;border-radius:4px;font-weight:500;font-size:14px;" onfocus="this.style.left='4px'" onblur="this.style.left='-9999px'">Skip to main content</a>
 
   <!-- NAV -->
   <header class="bg-ut-blue sticky top-0 z-50 shadow-md" style="height:72px;">
     <div class="max-w-[1200px] mx-auto px-5 lg:px-10 h-full flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
         <div class="bg-white rounded px-3 py-1.5 flex items-center gap-2">
-          <span style="font-size:18px; font-weight:600; color:#15397F;">Park</span>
-          <span style="font-size:18px; font-weight:600; color:#FFDA00; background:#15397F; padding:0 4px;">U</span>
-          <span style="font-size:18px; font-weight:600; color:#15397F;">Toledo</span>
+          <span style="font-size:18px; font-weight:500; color:#15397F;">Park</span>
+          <span style="font-size:18px; font-weight:500; color:#FFDA00; background:#15397F; padding:0 4px;">U</span>
+          <span style="font-size:18px; font-weight:500; color:#15397F;">Toledo</span>
         </div>
       </a>
       <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
@@ -102,10 +102,10 @@
   <!-- PAGE HERO -->
   <section style="background:linear-gradient(135deg,#15397F 0%,#0D2352 100%); padding:48px 0 52px;">
     <div class="max-w-[1200px] mx-auto px-5 lg:px-10">
-      <p style="color:#FFDA00; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px;">
+      <p style="color:#FFDA00; font-size:13px; font-weight:400; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px;">
         <a href="index.html" style="color:#BEC6C3; text-decoration:none;">Home</a> &rsaquo; Log In
       </p>
-      <h1 style="font-size:clamp(28px,4vw,42px); font-weight:600; color:#fff; letter-spacing:-0.02em;">Log In to ParkUToledo</h1>
+      <h1 style="font-size:clamp(28px,4vw,42px); font-weight:500; color:#fff; letter-spacing:-0.02em;">Log In to ParkUToledo</h1>
     </div>
   </section>
 
@@ -116,10 +116,10 @@
 
         <!-- LEFT: Login Card -->
         <div style="background:#fff; border:1px solid #E0E3E8; border-radius:8px; padding:40px; box-shadow:0 2px 16px rgba(0,0,0,0.07);">
-          <h2 style="font-size:22px; font-weight:600; color:#0D2352; margin-bottom:6px;">Welcome back</h2>
+          <h2 style="font-size:22px; font-weight:500; color:#0D2352; margin-bottom:6px;">Welcome back</h2>
           <p style="font-size:14px; color:#A0ACAA; margin-bottom:28px; line-height:1.6;">
             If you do not have a UToledo account, please
-            <a href="https://vpermit.com/parkutoledo/Account/Register" target="_blank" rel="noopener" style="color:#005CB9; text-decoration:none; font-weight:500;">register here</a>
+            <a href="https://vpermit.com/parkutoledo/Account/Register" target="_blank" rel="noopener" style="color:#005CB9; text-decoration:none; font-weight:400;">register here</a>
             or log in below.
           </p>
 
@@ -149,7 +149,7 @@
                 <input type="checkbox" name="rememberMe" />
                 <span>Remember me?</span>
               </label>
-              <a href="https://vpermit.com/parkutoledo/Account/ResetPassword" target="_blank" rel="noopener" style="font-size:13px; color:#005CB9; text-decoration:none; font-weight:500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Forgot vPermit password?</a>
+              <a href="https://vpermit.com/parkutoledo/Account/ResetPassword" target="_blank" rel="noopener" style="font-size:13px; color:#005CB9; text-decoration:none; font-weight:400;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Forgot vPermit password?</a>
             </div>
 
             <button type="submit" class="btn-submit">Log In</button>
@@ -157,7 +157,7 @@
 
           <p style="text-align:center; margin-top:24px; font-size:14px; color:#A0ACAA;">
             Don't have an account?
-            <a href="https://vpermit.com/parkutoledo/Account/Register" target="_blank" rel="noopener" style="color:#005CB9; font-weight:500; text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Register here</a>
+            <a href="https://vpermit.com/parkutoledo/Account/Register" target="_blank" rel="noopener" style="color:#005CB9; font-weight:400; text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Register here</a>
           </p>
         </div>
 
@@ -166,7 +166,7 @@
 
           <!-- Info card -->
           <div style="background:#fff; border:1px solid #E0E3E8; border-radius:8px; padding:32px; box-shadow:0 2px 16px rgba(0,0,0,0.07);">
-            <h3 style="font-size:17px; font-weight:600; color:#0D2352; margin-bottom:16px;">New to ParkUToledo?</h3>
+            <h3 style="font-size:17px; font-weight:500; color:#0D2352; margin-bottom:16px;">New to ParkUToledo?</h3>
             <p style="font-size:14px; color:#A0ACAA; line-height:1.7; margin-bottom:20px;">
               UToledo students, faculty, and staff log in with their university credentials. Visitors and external users can create a free vPermit account to purchase permits and manage parking.
             </p>
@@ -175,16 +175,16 @@
 
           <!-- Citations card -->
           <div style="background:#F5F6F8; border:1px solid #E0E3E8; border-radius:8px; padding:32px;">
-            <h3 style="font-size:17px; font-weight:600; color:#0D2352; margin-bottom:12px;">Pay a Citation</h3>
+            <h3 style="font-size:17px; font-weight:500; color:#0D2352; margin-bottom:12px;">Pay a Citation</h3>
             <p style="font-size:14px; color:#A0ACAA; line-height:1.7; margin-bottom:20px;">
               You can pay a parking citation without logging in. Visit the citations portal to look up and pay your citation by ticket number.
             </p>
-            <a href="https://pay-a-citation.com/parkutoledo" target="_blank" rel="noopener" style="font-size:14px; font-weight:500; color:#005CB9; text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Pay a Citation &rarr;</a>
+            <a href="https://pay-a-citation.com/parkutoledo" target="_blank" rel="noopener" style="font-size:14px; font-weight:400; color:#005CB9; text-decoration:none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Pay a Citation &rarr;</a>
           </div>
 
           <!-- Quick links card -->
           <div style="background:#fff; border:1px solid #E0E3E8; border-radius:8px; padding:32px; box-shadow:0 2px 16px rgba(0,0,0,0.07);">
-            <h3 style="font-size:17px; font-weight:600; color:#0D2352; margin-bottom:16px;">Portal Quick Links</h3>
+            <h3 style="font-size:17px; font-weight:500; color:#0D2352; margin-bottom:16px;">Portal Quick Links</h3>
             <div style="display:flex; flex-direction:column; gap:10px;">
               <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" style="font-size:14px; color:#005CB9; text-decoration:none; display:flex; align-items:center; gap:8px;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
                 <span style="color:#FFDA00;">&#9658;</span> Parking Portal Home
@@ -229,7 +229,7 @@
           </div>
         </div>
         <div>
-          <h3 style="font-size:14px; font-weight:500; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Quick Links</h3>
+          <h3 style="font-size:14px; font-weight:400; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Quick Links</h3>
           <nav aria-label="Footer navigation">
             <a href="index.html" class="footer-link">Home</a>
             <a href="students.html" class="footer-link">Permit Parking</a>
@@ -245,7 +245,7 @@
           </nav>
         </div>
         <div>
-          <h3 style="font-size:14px; font-weight:500; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Contact</h3>
+          <h3 style="font-size:14px; font-weight:400; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Contact</h3>
           <address style="font-style:normal;">
             <p style="color:#BEC6C3; font-size:14px; line-height:1.7; margin-bottom:8px;">2801 W. Bancroft St<br/>Mail Stop 107<br/>Toledo, OH 43606</p>
             <a href="mailto:info@parkutoledo.com" class="footer-link">info@parkutoledo.com</a>
@@ -253,7 +253,7 @@
           </address>
         </div>
         <div>
-          <h3 style="font-size:14px; font-weight:500; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Parking Portals</h3>
+          <h3 style="font-size:14px; font-weight:400; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Parking Portals</h3>
           <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" class="btn-gold" style="font-size:14px; padding:12px 24px; margin-bottom:12px; display:block; text-align:center;">Parking Portal</a>
           <a href="https://parkmobile.io" target="_blank" rel="noopener" style="display:block; text-align:center; padding:10px 24px; border-radius:4px; border:1px solid rgba(255,255,255,0.25); color:#BEC6C3; font-size:14px; font-weight:400; text-decoration:none;" onmouseover="this.style.color='#FFDA00';this.style.borderColor='#FFDA00'" onmouseout="this.style.color='#BEC6C3';this.style.borderColor='rgba(255,255,255,0.25)'">ParkMobile</a>
         </div>
