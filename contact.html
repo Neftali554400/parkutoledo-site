@@ -3,222 +3,231 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — ParkUToledo</title>
-  <meta name="description" content="Contact ParkUToledo. Address, email, office hours, and campus map for The University of Toledo Parking Services." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <title>Contact Parking — ParkUToledo</title>
+  <meta name="description" content="Contact ParkUToledo. Address, phone, email, office hours, and campus parking map for The University of Toledo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{'ut-blue':'#15397F','ut-gold':'#FFDA00','ut-dark':'#0D2352','ut-accent':'#005CB9','ut-gray-light':'#BEC6C3'},fontFamily:{poppins:['Poppins','sans-serif']}}}}</script>
+  <script>tailwind.config={theme:{extend:{colors:{'ut-blue':'#15397F','ut-gold':'#FFDA00','ut-dark':'#0D2352','ut-accent':'#005CB9','ut-gray-light':'#BEC6C3','ut-gray-mid':'#A0ACAA'},fontFamily:{poppins:['Poppins','sans-serif']}}}}</script>
   <style>
     * { font-family: 'Poppins', sans-serif; }
-    .nav-link { color:#fff; font-size:15px; font-weight:400; padding:6px 2px; position:relative; text-decoration:none; transition:color 0.2s; }
-    .nav-link:hover { color:#FFDA00; }
-    .nav-link::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:#FFDA00; transition:width 0.2s; }
-    .nav-link:hover::after { width:100%; }
-    .btn-gold { background:#FFDA00; color:#15397F; font-weight:500; font-size:15px; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; display:inline-block; text-decoration:none; transition:background 0.2s; }
-    .btn-gold:hover { background:#e5c500; }
+    .nav-link { color:#FFDA00; font-size:13px; font-weight:400; letter-spacing:0.06em; text-transform:uppercase; padding:4px 0; position:relative; text-decoration:none; transition:color 0.2s, opacity 0.2s; }
+    .nav-link:hover { color:#fff; opacity:1; }
+    .nav-link.active { color:#fff; border-bottom:2px solid #FFDA00; padding-bottom:2px; opacity:1; }
+    .nav-link-login { color:#fff; background:transparent; border:1px solid rgba(255,255,255,0.4); border-radius:3px; padding:5px 14px; font-size:13px; font-weight:400; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; transition:background 0.2s, color 0.2s; }
+    .nav-link-login:hover { background:rgba(255,255,255,0.15); }
+    .btn-gold { background:#FFDA00; color:#15397F; font-weight:500; font-size:15px; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; display:inline-block; text-decoration:none; transition:background 0.2s, transform 0.15s; }
+    .btn-gold:hover { background:#e5c500; transform:translateY(-1px); }
     .footer-link { color:#BEC6C3; font-size:14px; text-decoration:none; transition:color 0.2s; display:block; margin-bottom:8px; }
     .footer-link:hover { color:#FFDA00; }
     #mobile-menu { display:none; } #mobile-menu.open { display:block; }
     a:focus-visible, button:focus-visible { outline:2px solid #FFDA00; outline-offset:2px; border-radius:2px; }
-    /* Form */
-    .form-group { display:flex; flex-direction:column; gap:6px; margin-bottom:20px; }
-    .form-label { font-size:14px; font-weight:400; color:#15397F; }
-    .form-input { border:1px solid #BEC6C3; border-radius:4px; padding:12px 16px; font-size:15px; color:#1A1A1A; font-family:'Poppins',sans-serif; outline:none; transition:border-color 0.2s, box-shadow 0.2s; width:100%; box-sizing:border-box; }
-    .form-input:focus { border-color:#15397F; box-shadow:0 0 0 3px rgba(21,57,127,0.12); }
-    textarea.form-input { resize:vertical; min-height:140px; }
-    .btn-submit { background:#15397F; color:#fff; font-weight:400; font-size:15px; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; width:100%; font-family:'Poppins',sans-serif; transition:background 0.2s; }
-    .btn-submit:hover { background:#0D2352; }
   </style>
 </head>
 <body class="bg-white" style="color:#1A1A1A;">
-  <header class="bg-ut-blue sticky top-0 z-50 shadow-md" style="height:72px;">
-    <div class="max-w-[1200px] mx-auto px-5 lg:px-10 h-full flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
-        <div class="bg-white rounded px-3 py-1.5 flex items-center gap-2">
-          <span style="font-size:18px; font-weight:500; color:#15397F;">Park</span>
-          <span style="font-size:18px; font-weight:500; color:#FFDA00; background:#15397F; padding:0 4px;">U</span>
-          <span style="font-size:18px; font-weight:500; color:#15397F;">Toledo</span>
-        </div>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div style="background:#fff; border-bottom:1px solid #E0E3E8; padding:10px 20px; text-align:center;">
+    <p style="font-size:14px; font-weight:500; color:#0D2352; margin:0; line-height:1.5;">Please remember that parking permits are required at all times including nights and weekends, in between semesters and academic breaks.</p>
+  </div>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50" style="background:#15397F; box-shadow:0 2px 8px rgba(0,0,0,0.18);">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10" style="height:72px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+      <a href="index.html" class="flex-shrink-0" style="display:flex; align-items:center; gap:0; text-decoration:none;">
+        <span style="display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; background:#FFDA00; border-radius:50%; font-size:20px; font-weight:900; color:#15397F; line-height:1; font-style:italic; letter-spacing:-0.04em;">P</span>
+        <span style="font-size:20px; font-weight:500; color:#fff; margin-left:4px; letter-spacing:-0.01em;">ark</span>
+        <span style="font-size:20px; font-weight:900; color:#FFDA00; letter-spacing:-0.01em;">U</span>
+        <span style="font-size:20px; font-weight:500; color:#fff; letter-spacing:-0.01em;">Toledo</span>
       </a>
-      <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
-        <a href="students.html" class="nav-link">Students</a>
-        <a href="faculty-staff.html" class="nav-link">Faculty &amp; Staff</a>
-        <a href="visitors.html" class="nav-link">Visitors</a>
-        <a href="daily-hourly.html" class="nav-link">Daily / Hourly</a>
-        <a href="citations.html" class="nav-link">Citations</a>
+      <nav class="hidden lg:flex items-center gap-5 xl:gap-7 flex-1 justify-end mr-4" aria-label="Primary navigation">
+        <a href="https://vpermit.com/parkutoledo/Account/Login" target="_blank" rel="noopener" class="nav-link-login">Log In</a>
+        <a href="students.html" class="nav-link">Permit Parking</a>
+        <a href="visitors.html" class="nav-link">Visitor Parking</a>
         <a href="find-parking.html" class="nav-link">Find Parking</a>
-        <a href="news.html" class="nav-link">News</a>
-        <a href="contact.html" class="nav-link" style="color:#FFDA00;">Contact</a>
+        <a href="rules-regulations.html" class="nav-link">User Guides</a>
+        <a href="game-day.html" class="nav-link">Holidays and Global Days</a>
+        <a href="faqs.html" class="nav-link">FAQs</a>
+        <a href="contact.html" class="nav-link active" aria-current="page">Contact Parking</a>
       </nav>
-      <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" class="btn-gold hidden lg:inline-block" style="padding:10px 22px; font-size:14px;">Parking Portal</a>
-      <button id="hamburger-btn" class="lg:hidden flex flex-col justify-center p-2" aria-label="Toggle menu">
+      <button id="hamburger-btn" class="lg:hidden flex flex-col justify-center p-2" aria-label="Toggle menu" aria-expanded="false">
         <span style="display:block;width:24px;height:2px;background:#fff;margin:5px 0;"></span>
         <span style="display:block;width:24px;height:2px;background:#fff;margin:5px 0;"></span>
         <span style="display:block;width:24px;height:2px;background:#fff;margin:5px 0;"></span>
       </button>
     </div>
-    <div id="mobile-menu" class="bg-ut-dark lg:hidden absolute top-full left-0 w-full z-50 pb-4 border-t border-white/10">
-      <div class="max-w-[1200px] mx-auto px-5 pt-4 flex flex-col gap-1">
-        <a href="students.html" class="nav-link py-2 border-b border-white/10">Students</a>
-        <a href="faculty-staff.html" class="nav-link py-2 border-b border-white/10">Faculty &amp; Staff</a>
-        <a href="visitors.html" class="nav-link py-2 border-b border-white/10">Visitors</a>
-        <a href="daily-hourly.html" class="nav-link py-2 border-b border-white/10">Daily / Hourly</a>
-        <a href="citations.html" class="nav-link py-2 border-b border-white/10">Citations</a>
+    <div id="mobile-menu" class="lg:hidden absolute top-full left-0 w-full z-50 pb-4 border-t border-white/10" style="background:#0D2352;">
+      <div class="max-w-[1400px] mx-auto px-6 pt-4 flex flex-col gap-1">
+        <a href="https://vpermit.com/parkutoledo/Account/Login" target="_blank" rel="noopener" class="nav-link py-2 border-b border-white/10">Log In</a>
+        <a href="students.html" class="nav-link py-2 border-b border-white/10">Permit Parking</a>
+        <a href="visitors.html" class="nav-link py-2 border-b border-white/10">Visitor Parking</a>
         <a href="find-parking.html" class="nav-link py-2 border-b border-white/10">Find Parking</a>
-        <a href="news.html" class="nav-link py-2 border-b border-white/10">News</a>
-        <a href="contact.html" class="nav-link py-2 border-b border-white/10">Contact</a>
-        <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" class="btn-gold mt-4 text-center">Parking Portal</a>
+        <a href="rules-regulations.html" class="nav-link py-2 border-b border-white/10">User Guides</a>
+        <a href="game-day.html" class="nav-link py-2 border-b border-white/10">Holidays and Global Days</a>
+        <a href="faqs.html" class="nav-link py-2 border-b border-white/10">FAQs</a>
+        <a href="contact.html" class="nav-link py-2 border-b border-white/10">Contact Parking</a>
       </div>
     </div>
   </header>
 
-  <section style="background:linear-gradient(135deg,#15397F 0%,#0D2352 100%); padding:60px 0 64px;">
-    <div class="max-w-[1200px] mx-auto px-5 lg:px-10">
-      <p style="color:#FFDA00; font-size:13px; font-weight:400; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px;">
-        <a href="index.html" style="color:#BEC6C3; text-decoration:none;">Home</a> &rsaquo; Contact
-      </p>
-      <h1 style="font-size:clamp(32px,4vw,48px); font-weight:500; color:#fff; letter-spacing:-0.02em; margin-bottom:12px;">Contact ParkUToledo</h1>
-      <p style="font-size:18px; color:#BEC6C3; max-width:600px; line-height:1.6;">Have a question about permits, citations, or parking? Get in touch with our team.</p>
+  <!-- HERO -->
+  <section style="position:relative; height:600px; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+    <img src="images/permit-parking.jpeg" alt="University of Toledo campus parking" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;" />
+    <div style="position:absolute; inset:0; background:rgba(10,20,50,0.55);"></div>
+    <div style="position:relative; z-index:2; text-align:center; padding:48px 24px; width:100%;">
+      <div style="background:#fff; border-radius:12px; padding:40px 72px; display:inline-block;">
+        <h1 style="font-size:clamp(26px,4vw,40px); font-weight:600; color:#0D2352; margin:0; white-space:nowrap;">Contact Parking</h1>
+      </div>
     </div>
   </section>
 
   <main>
-    <div class="max-w-[1200px] mx-auto px-5 lg:px-10" style="padding-top:64px; padding-bottom:80px;">
-      <div style="display:grid; grid-template-columns:1fr; gap:48px;" class="lg:grid-cols-[1fr_400px]">
 
-        <!-- Contact Info + Map -->
-        <div>
-          <h2 style="font-size:24px; font-weight:400; color:#15397F; margin-bottom:24px;">Parking Services</h2>
-
-          <div style="display:flex; flex-direction:column; gap:24px; margin-bottom:40px;">
-            <div style="display:flex; gap:16px; align-items:flex-start;">
-              <div style="width:44px; height:44px; background:#EEF2FB; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15397F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <p style="font-size:14px; font-weight:400; color:#15397F; margin-bottom:4px;">Address</p>
-                <address style="font-style:normal; font-size:15px; color:#1A1A1A; line-height:1.7;">
-                  2801 W. Bancroft St<br/>Mail Stop 107<br/>Toledo, OH 43606
-                </address>
-              </div>
-            </div>
-
-            <div style="display:flex; gap:16px; align-items:flex-start;">
-              <div style="width:44px; height:44px; background:#EEF2FB; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15397F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div>
-                <p style="font-size:14px; font-weight:400; color:#15397F; margin-bottom:4px;">Email</p>
-                <a href="mailto:info@parkutoledo.com" style="font-size:15px; color:#005CB9; text-decoration:none;">info@parkutoledo.com</a>
-              </div>
-            </div>
-
-            <div style="display:flex; gap:16px; align-items:flex-start;">
-              <div style="width:44px; height:44px; background:#EEF2FB; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15397F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <div>
-                <p style="font-size:14px; font-weight:400; color:#15397F; margin-bottom:4px;">Office Hours</p>
-                <p style="font-size:15px; color:#1A1A1A; line-height:1.7;">Monday – Friday: 7:00 AM – 5:00 PM<br/>Saturday – Sunday: Closed</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Map -->
-          <div style="border-radius:8px; overflow:hidden; border:1px solid #BEC6C3;">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2988.5!2d-83.6085!3d41.6602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883c6960d2b20c27%3A0x4c6a1c8e22d2527!2sUniversity%20of%20Toledo%2C%20Toledo%2C%20OH!5e0!3m2!1sen!2sus!4v1716000000000"
-              width="100%" height="340" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              title="University of Toledo campus location"></iframe>
-          </div>
-        </div>
-
-        <!-- Contact Form -->
-        <div>
-          <h2 style="font-size:24px; font-weight:400; color:#15397F; margin-bottom:24px;">Send Us a Message</h2>
-          <form id="contact-form" novalidate>
-            <div class="form-group">
-              <label for="name" class="form-label">Full Name <span style="color:#d00;">*</span></label>
-              <input type="text" id="name" name="name" class="form-input" placeholder="Jane Smith" required autocomplete="name" />
-            </div>
-            <div class="form-group">
-              <label for="email" class="form-label">Email Address <span style="color:#d00;">*</span></label>
-              <input type="email" id="email" name="email" class="form-input" placeholder="jane@example.com" required autocomplete="email" />
-            </div>
-            <div class="form-group">
-              <label for="subject" class="form-label">Subject <span style="color:#d00;">*</span></label>
-              <select id="subject" name="subject" class="form-input" required>
-                <option value="">Select a topic…</option>
-                <option>Permit Purchase</option>
-                <option>Citation / Appeal</option>
-                <option>Event Parking Request</option>
-                <option>General Question</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message" class="form-label">Message <span style="color:#d00;">*</span></label>
-              <textarea id="message" name="message" class="form-input" placeholder="How can we help you?" required></textarea>
-            </div>
-            <button type="submit" class="btn-submit">Send Message</button>
-            <div id="form-success" style="display:none; margin-top:16px; background:#d4edda; border:1px solid #c3e6cb; border-radius:4px; padding:14px 18px; font-size:15px; color:#155724;">
-              Thank you! Your message has been sent. We'll be in touch within 1–2 business days.
-            </div>
-          </form>
-        </div>
-
+    <!-- INTRO TEXT -->
+    <section style="background:#fff; padding:64px 20px 56px;">
+      <div class="max-w-[860px] mx-auto">
+        <p style="font-size:clamp(17px,2vw,22px); font-weight:400; color:#1A1A1A; line-height:1.7;">
+          Have questions about parking? The team at ParkUToledo can help.
+          Email us <a href="mailto:info@parkutoledo.com" style="color:#005CB9; text-decoration:underline;">info@parkutoledo.com</a>
+          or call us at <a href="tel:4195304100" style="color:#005CB9; text-decoration:underline;">419.530.4100</a> for assistance.
+        </p>
       </div>
-    </div>
+    </section>
+
+    <!-- FIND US + CONTACT DETAILS -->
+    <section style="background:#fff; padding:0 20px 72px;">
+      <div class="max-w-[860px] mx-auto">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px;">
+
+          <!-- Left: FIND US -->
+          <div>
+            <h2 style="font-size:16px; font-weight:600; color:#15397F; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:24px;">Find Us</h2>
+
+            <p style="font-size:14px; font-weight:600; color:#1A1A1A; margin-bottom:6px;">Campus Address</p>
+            <p style="font-size:15px; color:#3D3D3D; line-height:1.8; margin-bottom:24px;">
+              Rocket Hall, Suite 1750<br/>
+              1625 W Rocket Drive<br/>
+              Toledo, OH 43606
+            </p>
+
+            <p style="font-size:14px; font-weight:600; color:#1A1A1A; margin-bottom:6px;">Office Hours</p>
+            <p style="font-size:15px; color:#3D3D3D; line-height:1.8; margin-bottom:24px;">
+              8:30a–5:00pm Monday Thru Friday.<br/>
+              Closed on University Holidays
+            </p>
+
+            <p style="font-size:14px; font-weight:600; color:#1A1A1A; margin-bottom:6px;">Mailing Address</p>
+            <p style="font-size:15px; color:#3D3D3D; line-height:1.8;">
+              2801 West Bancroft Street,<br/>
+              Mail Stop 107,<br/>
+              Toledo, OH 43606
+            </p>
+          </div>
+
+          <!-- Right: Quick contact -->
+          <div style="padding-top:44px;">
+            <div style="margin-bottom:24px;">
+              <p style="font-size:12px; font-weight:600; color:#1A1A1A; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px;">Call Us</p>
+              <a href="tel:4195304100" style="font-size:15px; color:#005CB9; text-decoration:underline;">419.530.4100</a>
+            </div>
+
+            <div style="margin-bottom:24px;">
+              <p style="font-size:12px; font-weight:600; color:#1A1A1A; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px;">Email Us</p>
+              <a href="mailto:info@parkutoledo.com" style="font-size:15px; color:#005CB9; text-decoration:underline;">info@parkutoledo.com</a>
+            </div>
+
+            <div>
+              <p style="font-size:12px; font-weight:600; color:#1A1A1A; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px;">Resources</p>
+              <a href="#" style="font-size:15px; color:#005CB9; text-decoration:underline;">Our Parking Procedures</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PARKING MAP -->
+    <section style="background:#fff; padding:0 20px 96px;">
+      <div class="max-w-[860px] mx-auto">
+        <h2 style="font-size:clamp(18px,2.5vw,24px); font-weight:600; color:#15397F; text-transform:uppercase; letter-spacing:0.06em; text-align:center; margin-bottom:24px;">Parking Map</h2>
+        <div style="border:2px solid #ddd; border-radius:4px; overflow:hidden;">
+          <iframe
+            src="https://www.google.com/maps/d/embed?mid=1bsXPpHXyWNrJODGz1Q0x9Q7VQoI&ehbc=2E312F"
+            width="100%"
+            height="520"
+            style="display:block; border:none;"
+            allowfullscreen
+            loading="lazy"
+            title="ParkUToledo Main Campus Map">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer style="background:#0D2352;">
     <div class="max-w-[1200px] mx-auto px-5 lg:px-10 py-16">
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:48px;">
         <div>
-          <div class="bg-white inline-flex rounded px-3 py-2 mb-4" style="gap:4px; align-items:center;">
-            <span style="font-size:16px; font-weight:500; color:#15397F;">Park</span>
-            <span style="font-size:16px; font-weight:500; color:#FFDA00; background:#15397F; padding:0 3px;">U</span>
-            <span style="font-size:16px; font-weight:500; color:#15397F;">Toledo</span>
+          <img src="images/footer-logo.png" alt="ParkUToledo" style="height:56px; width:auto; margin-bottom:16px; display:block;" />
+          <p style="color:#BEC6C3; font-size:14px; line-height:1.7; margin-bottom:20px;">Parking management for The University of Toledo.</p>
+          <div style="display:flex; gap:12px;">
+            <a href="#" aria-label="Facebook" style="width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; color:#BEC6C3;" onmouseover="this.style.borderColor='#FFDA00';this.style.color='#FFDA00'" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)';this.style.color='#BEC6C3'">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter / X" style="width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; color:#BEC6C3;" onmouseover="this.style.borderColor='#FFDA00';this.style.color='#FFDA00'" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)';this.style.color='#BEC6C3'">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
           </div>
-          <p style="color:#BEC6C3; font-size:14px; line-height:1.7;">Parking management for The University of Toledo.</p>
         </div>
         <div>
           <h3 style="font-size:14px; font-weight:400; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Quick Links</h3>
-          <a href="students.html" class="footer-link">Students</a>
-          <a href="faculty-staff.html" class="footer-link">Faculty &amp; Staff</a>
-          <a href="visitors.html" class="footer-link">Visitors</a>
-          <a href="citations.html" class="footer-link">Citations</a>
-          <a href="contact.html" class="footer-link">Contact</a>
+          <nav aria-label="Footer navigation">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="students.html" class="footer-link">Permit Parking</a>
+            <a href="visitors.html" class="footer-link">Visitor Parking</a>
+            <a href="citations.html" class="footer-link">Enforcement &amp; Citations</a>
+            <a href="citations.html" class="footer-link">Appeals</a>
+            <a href="faqs.html" class="footer-link">FAQs</a>
+            <a href="#" class="footer-link">Employment Opportunites</a>
+            <a href="rules-regulations.html" class="footer-link">User Guides</a>
+            <a href="news.html" class="footer-link">Parking News</a>
+            <a href="contact.html" class="footer-link">Contact Parking</a>
+            <a href="contact.html" class="footer-link">About Us</a>
+          </nav>
         </div>
         <div>
           <h3 style="font-size:14px; font-weight:400; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Contact</h3>
-          <p style="color:#BEC6C3; font-size:14px; line-height:1.7; margin-bottom:8px;">2801 W. Bancroft St<br/>Toledo, OH 43606</p>
-          <a href="mailto:info@parkutoledo.com" class="footer-link">info@parkutoledo.com</a>
+          <address style="font-style:normal;">
+            <p style="color:#BEC6C3; font-size:14px; line-height:1.7; margin-bottom:8px;">2801 W. Bancroft St<br/>Mail Stop 107<br/>Toledo, OH 43606</p>
+            <a href="mailto:info@parkutoledo.com" class="footer-link">info@parkutoledo.com</a>
+            <p style="color:#BEC6C3; font-size:13px; line-height:1.6; margin-top:8px;">Mon–Fri: 7AM–5PM</p>
+          </address>
         </div>
         <div>
-          <h3 style="font-size:14px; font-weight:400; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Portal</h3>
-          <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" class="btn-gold" style="font-size:14px; padding:12px 24px; display:block; text-align:center;">Parking Portal</a>
+          <h3 style="font-size:14px; font-weight:400; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Parking Portals</h3>
+          <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" class="btn-gold" style="font-size:14px; padding:12px 24px; margin-bottom:12px; display:block; text-align:center;">Parking Portal</a>
+          <a href="https://parkmobile.io" target="_blank" rel="noopener" style="display:block; text-align:center; padding:10px 24px; border-radius:4px; border:1px solid rgba(255,255,255,0.25); color:#BEC6C3; font-size:14px; font-weight:400; text-decoration:none;" onmouseover="this.style.color='#FFDA00';this.style.borderColor='#FFDA00'" onmouseout="this.style.color='#BEC6C3';this.style.borderColor='rgba(255,255,255,0.25)'">ParkMobile</a>
         </div>
       </div>
     </div>
     <div style="background:#091A3A; border-top:1px solid rgba(255,255,255,0.06);">
-      <div class="max-w-[1200px] mx-auto px-5 lg:px-10 py-4">
-        <p style="color:#A0ACAA; font-size:13px;">© 2026 ParkUToledo. The University of Toledo.</p>
+      <div class="max-w-[1200px] mx-auto px-5 lg:px-10 py-4 flex flex-wrap justify-between items-center gap-2">
+        <p style="color:#A0ACAA; font-size:13px; margin:0;">© 2026 ParkUToledo. The University of Toledo.</p>
+        <div style="display:flex; gap:20px;">
+          <a href="#" style="color:#A0ACAA; font-size:13px; text-decoration:none;" onmouseover="this.style.color='#FFDA00'" onmouseout="this.style.color='#A0ACAA'">Privacy Policy</a>
+          <a href="#" style="color:#A0ACAA; font-size:13px; text-decoration:none;" onmouseover="this.style.color='#FFDA00'" onmouseout="this.style.color='#A0ACAA'">Terms of Use</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <script>
     document.getElementById('hamburger-btn').addEventListener('click', function() {
-      const m = document.getElementById('mobile-menu'); m.classList.toggle('open');
-    });
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      // In production this would POST to a backend / WPForms. Demo: show success message.
-      this.querySelectorAll('input, select, textarea').forEach(el => el.disabled = true);
-      document.querySelector('.btn-submit').disabled = true;
-      document.getElementById('form-success').style.display = 'block';
+      const m = document.getElementById('mobile-menu'); m.classList.toggle('open'); this.setAttribute('aria-expanded', m.classList.contains('open'));
     });
   </script>
 </body>

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQs — ParkUToledo</title>
+  <meta name="description" content="Frequently asked questions about parking at The University of Toledo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{'ut-blue':'#15397F','ut-gold':'#FFDA00','ut-dark':'#0D2352','ut-accent':'#005CB9','ut-gray-light':'#BEC6C3','ut-gray-mid':'#A0ACAA'},fontFamily:{poppins:['Poppins','sans-serif']}}}}</script>
+  <style>
+    * { font-family: 'Poppins', sans-serif; }
+    .nav-link { color:#FFDA00; font-size:13px; font-weight:400; letter-spacing:0.06em; text-transform:uppercase; padding:4px 0; position:relative; text-decoration:none; transition:color 0.2s, opacity 0.2s; }
+    .nav-link:hover { color:#fff; opacity:1; }
+    .nav-link.active { color:#fff; border-bottom:2px solid #FFDA00; padding-bottom:2px; opacity:1; }
+    .nav-link-login { color:#fff; background:transparent; border:1px solid rgba(255,255,255,0.4); border-radius:3px; padding:5px 14px; font-size:13px; font-weight:400; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; transition:background 0.2s, color 0.2s; }
+    .nav-link-login:hover { background:rgba(255,255,255,0.15); }
+    .btn-gold { background:#FFDA00; color:#15397F; font-weight:500; font-size:15px; padding:14px 32px; border-radius:4px; border:none; cursor:pointer; display:inline-block; text-decoration:none; transition:background 0.2s, transform 0.15s; }
+    .btn-gold:hover { background:#e5c500; transform:translateY(-1px); }
+    .footer-link { color:#BEC6C3; font-size:14px; text-decoration:none; transition:color 0.2s; display:block; margin-bottom:8px; }
+    .footer-link:hover { color:#FFDA00; }
+    #mobile-menu { display:none; } #mobile-menu.open { display:block; }
+    a:focus-visible, button:focus-visible { outline:2px solid #FFDA00; outline-offset:2px; border-radius:2px; }
+
+    /* FAQ Accordion */
+    .faq-section { margin-bottom:48px; }
+    .faq-section-title { font-size:clamp(16px,2vw,20px); font-weight:600; color:#15397F; text-transform:uppercase; letter-spacing:0.06em; text-align:center; margin-bottom:16px; }
+    .faq-btn { width:100%; display:flex; justify-content:space-between; align-items:center; padding:14px 18px; background:#F5F6F8; border:none; border-bottom:1px solid #e0e3e8; cursor:pointer; text-align:left; font-size:14px; font-weight:400; color:#1A1A1A; transition:background 0.2s; }
+    .faq-btn:hover { background:#eaecef; }
+    .faq-btn[aria-expanded="true"] { background:#15397F; color:#fff; }
+    .faq-btn[aria-expanded="true"] svg { stroke:#fff; transform:rotate(180deg); }
+    .faq-btn svg { flex-shrink:0; margin-left:12px; transition:transform 0.2s; stroke:#555; }
+    .faq-content { display:none; background:#fff; padding:16px 18px; border-bottom:1px solid #e0e3e8; font-size:14px; color:#3D3D3D; line-height:1.8; }
+  </style>
+</head>
+<body class="bg-white" style="color:#1A1A1A;">
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div style="background:#fff; border-bottom:1px solid #E0E3E8; padding:10px 20px; text-align:center;">
+    <p style="font-size:14px; font-weight:500; color:#0D2352; margin:0; line-height:1.5;">Please remember that parking permits are required at all times including nights and weekends, in between semesters and academic breaks.</p>
+  </div>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50" style="background:#15397F; box-shadow:0 2px 8px rgba(0,0,0,0.18);">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10" style="height:72px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+      <a href="index.html" class="flex-shrink-0" style="display:flex; align-items:center; gap:0; text-decoration:none;">
+        <span style="display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; background:#FFDA00; border-radius:50%; font-size:20px; font-weight:900; color:#15397F; line-height:1; font-style:italic; letter-spacing:-0.04em;">P</span>
+        <span style="font-size:20px; font-weight:500; color:#fff; margin-left:4px; letter-spacing:-0.01em;">ark</span>
+        <span style="font-size:20px; font-weight:900; color:#FFDA00; letter-spacing:-0.01em;">U</span>
+        <span style="font-size:20px; font-weight:500; color:#fff; letter-spacing:-0.01em;">Toledo</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-5 xl:gap-7 flex-1 justify-end mr-4" aria-label="Primary navigation">
+        <a href="https://vpermit.com/parkutoledo/Account/Login" target="_blank" rel="noopener" class="nav-link-login">Log In</a>
+        <a href="students.html" class="nav-link">Permit Parking</a>
+        <a href="visitors.html" class="nav-link">Visitor Parking</a>
+        <a href="find-parking.html" class="nav-link">Find Parking</a>
+        <a href="rules-regulations.html" class="nav-link">User Guides</a>
+        <a href="game-day.html" class="nav-link">Holidays and Global Days</a>
+        <a href="faqs.html" class="nav-link active" aria-current="page">FAQs</a>
+        <a href="contact.html" class="nav-link">Contact Parking</a>
+      </nav>
+      <button id="hamburger-btn" class="lg:hidden flex flex-col justify-center p-2" aria-label="Toggle menu" aria-expanded="false">
+        <span style="display:block;width:24px;height:2px;background:#fff;margin:5px 0;"></span>
+        <span style="display:block;width:24px;height:2px;background:#fff;margin:5px 0;"></span>
+        <span style="display:block;width:24px;height:2px;background:#fff;margin:5px 0;"></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="lg:hidden absolute top-full left-0 w-full z-50 pb-4 border-t border-white/10" style="background:#0D2352;">
+      <div class="max-w-[1400px] mx-auto px-6 pt-4 flex flex-col gap-1">
+        <a href="https://vpermit.com/parkutoledo/Account/Login" target="_blank" rel="noopener" class="nav-link py-2 border-b border-white/10">Log In</a>
+        <a href="students.html" class="nav-link py-2 border-b border-white/10">Permit Parking</a>
+        <a href="visitors.html" class="nav-link py-2 border-b border-white/10">Visitor Parking</a>
+        <a href="find-parking.html" class="nav-link py-2 border-b border-white/10">Find Parking</a>
+        <a href="rules-regulations.html" class="nav-link py-2 border-b border-white/10">User Guides</a>
+        <a href="game-day.html" class="nav-link py-2 border-b border-white/10">Holidays and Global Days</a>
+        <a href="faqs.html" class="nav-link py-2 border-b border-white/10">FAQs</a>
+        <a href="contact.html" class="nav-link py-2 border-b border-white/10">Contact Parking</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="position:relative; height:600px; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+    <img src="images/hero-image.jpg" alt="University of Toledo campus" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;" />
+    <div style="position:absolute; inset:0; background:rgba(10,20,50,0.55);"></div>
+    <div style="position:relative; z-index:2; text-align:center; padding:48px 24px; width:100%;">
+      <div style="background:#fff; border-radius:12px; padding:48px 72px; display:inline-block;">
+        <h1 style="font-size:clamp(28px,4vw,44px); font-weight:600; color:#0D2352; letter-spacing:0.04em; text-transform:uppercase; margin:0; white-space:nowrap;">FAQs</h1>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section style="background:#fff; padding:64px 20px 96px;">
+      <div class="max-w-[900px] mx-auto">
+
+        <!-- ABOUT US -->
+        <div class="faq-section">
+          <h2 class="faq-section-title">About Us</h2>
+          <div style="border:1px solid #e0e3e8; border-bottom:none;">
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>1. How does the concession agreement work?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">ParkUToledo operates under a concession agreement with The University of Toledo to manage all parking facilities, permits, and enforcement on campus.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>2. How does the money from parking citations and parking permits go?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Revenue from parking citations and permits is used to fund parking infrastructure, maintenance, and campus transportation services.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>3. How are citations issued?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Citations are issued by parking enforcement officers who patrol campus. Your license plate number is used to identify your vehicle.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>4. Does ParkUToledo have one citation quota?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">No. ParkUToledo does not operate on a citation quota system. Enforcement officers issue citations based on violations observed.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>5. When does ParkUToledo enforce permits?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Parking permits are enforced at all times including nights, weekends, in between semesters, and during academic breaks.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>6. What is the purpose of parking enforcement?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Parking enforcement ensures that parking spaces are available to permit holders and that campus traffic flows safely and efficiently.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>7. Why were the parking garages demolished?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">The parking garages were demolished due to structural concerns and as part of campus redevelopment plans.</div>
+          </div>
+        </div>
+
+        <!-- PERMIT FAST FACTS -->
+        <div class="faq-section">
+          <h2 class="faq-section-title">Permit Fast Facts</h2>
+          <div style="border:1px solid #e0e3e8; border-bottom:none;">
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>1. Where should I park with my visitor permit?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">With a visitor permit you may park in any C Permit designated area on campus. Please refer to the campus map for C Permit lot locations.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>2. What is the Departmental Guest Permit rate?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Please contact the parking office for current departmental guest permit rates.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>3. Can I register more than one car in my parking portal (vPermit)?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Yes, you can register multiple vehicles in your vPermit account. However, only one vehicle may use the permit at a time.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>4. Can I purchase annual permits for my department to vPermit?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Yes. Departments can purchase annual permits through the vPermit portal. Contact our office for departmental purchasing options.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>5. I'm a student with a valid disability placard, what do I do?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Students with a valid disability placard should register through the vPermit portal and select the disability permit option. You will still need a university parking permit.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>6. Where can I park as a student with a valid disability placard?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">With a valid disability placard and a university permit, you may park in any accessible (ADA) designated space on campus.</div>
+          </div>
+        </div>
+
+        <!-- REGISTERING YOUR VEHICLE -->
+        <div class="faq-section">
+          <h2 class="faq-section-title">Registering Your Vehicle</h2>
+          <div style="border:1px solid #e0e3e8; border-bottom:none;">
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>1. Who is required to register their vehicle?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">All students, faculty, and staff who park on campus are required to register their vehicle and purchase a valid parking permit.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>2. How do I register?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Register through the <a href="https://vpermit.com/parkutoledo/Account/Login" target="_blank" rel="noopener" style="color:#005CB9;">vPermit parking portal</a>. Log in with your UToledo credentials or create a guest account.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>3. When should I register for a parking permit for the upcoming year?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Permits for the upcoming academic year typically go on sale in the spring. Check the parking portal for current availability and dates.</div>
+          </div>
+        </div>
+
+        <!-- GENERAL PARKING PERMIT INFO -->
+        <div class="faq-section">
+          <h2 class="faq-section-title">General Parking Permit Info</h2>
+          <div style="border:1px solid #e0e3e8; border-bottom:none;">
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>1. What Student Parking Permit type am I?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Student permit types are determined by your class standing and housing status. Log into the vPermit portal to see which permit type you qualify for.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>2. What Employee Parking Permit type am I?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Employee permit types are based on your department and position. Log into the vPermit portal with your UToledo credentials to see your eligible permit types.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>3. What are the different types of permits and their fees?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Please visit the <a href="students.html" style="color:#005CB9;">Permit Parking page</a> for a full list of permit types and current fees.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>4. How do I pick up my parking permit?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Your license plate number serves as your permit — no physical permit is required. Your plate is registered digitally in the system.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>5. I'm an affiliate of UToledo, which permit type am I eligible to purchase?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Affiliates should contact the parking office to determine eligibility and available permit types.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>6. When does my current permit expire?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Log into your vPermit account to view your current permit's expiration date.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>7. How does payroll deduction work for faculty and staff?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Faculty and staff may elect to have permit fees deducted from their paycheck on a pre-tax basis. Select the payroll deduction option when purchasing through vPermit.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>8. Why do I see additional charges when I use my credit card?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">A small transaction fee is applied when paying by credit card. To avoid this fee, use the payroll deduction option if available.</div>
+          </div>
+        </div>
+
+        <!-- VISITOR PARKING -->
+        <div class="faq-section">
+          <h2 class="faq-section-title">Visitor Parking</h2>
+          <div style="border:1px solid #e0e3e8; border-bottom:none;">
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>1. What is the daily parking rate for a visitor?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Daily visitor permits are available through the vPermit portal. Please visit the <a href="visitors.html" style="color:#005CB9;">Visitor Parking page</a> for current rates.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>2. When can I purchase a visitor permit?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Visitor permits can be purchased at any time through the vPermit portal or via ParkMobile for hourly parking.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>3. Where may visitors park while visiting campus?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Visitors with a daily permit may park in any C Permit area on campus. Refer to the <a href="find-parking.html" style="color:#005CB9;">campus map</a> for C Permit locations.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>4. Where can I do a quick pick up or drop off?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">There are 15-minute loading zones designated across campus for quick pick ups and drop offs. Please refer to the campus map for locations.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>5. I'm a family member of a student - what do I need to know before coming to campus?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Family members visiting campus must purchase a visitor permit via the vPermit portal or use ParkMobile for hourly parking. Permits are required at all times.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>6. What happens if I am in the 15 min area longer than the time allotted?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Vehicles remaining in a 15-minute zone beyond the allotted time are subject to a parking citation.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>7. Can I be in the 15 min area longer if I am in the vehicle?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">No. The 15-minute time limit applies regardless of whether a driver is present in the vehicle.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>8. I have a handicap placard - do I still need to purchase a permit or hourly parking?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Yes. A state-issued handicap placard does not exempt you from purchasing a university parking permit. You must still register and purchase a permit.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>9. Are there any free parking options available on campus?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">There are no free parking options on main campus. For patients visiting the UToledo Medical Center, designated no-cost patient parking areas are available.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>10. Are there any times when parking passes are not required?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Permits are not required on designated global holidays. See the <a href="game-day.html" style="color:#005CB9;">Holidays &amp; Global Days</a> page for the full schedule.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>11. Where can I park with my daily/monthly permit?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Daily and monthly permits authorize parking in C Permit areas. Refer to the campus map for designated C Permit lots.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>12. Why does my license plate need to face the drive lane?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Your license plate is your permit. Enforcement officers use license plate readers to verify permits, so your plate must be visible from the drive lane.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>13. I am visiting a department or group on campus - do I still need to purchase a pass or hourly parking?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Yes. All vehicles parked on campus must have a valid permit. The department you are visiting may be able to provide a guest pass — contact them in advance.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>14. Why was I issued a citation?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Citations are issued when a vehicle is parked without a valid permit or in violation of parking regulations. Log into your vPermit account to view citation details.</div>
+          </div>
+        </div>
+
+        <!-- SHORT TERM PARKING & PARKMOBILE -->
+        <div class="faq-section">
+          <h2 class="faq-section-title">Short Term Parking &amp; ParkMobile</h2>
+          <div style="border:1px solid #e0e3e8; border-bottom:none;">
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>1. Where are metered or zoned spaces located?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Metered and zoned spaces are located in areas 11, 12, and 13 on Main Campus. Refer to the <a href="find-parking.html" style="color:#005CB9;">campus map</a> for exact locations.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>2. What is ParkMobile?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">ParkMobile is a mobile app that lets you pay for parking by the hour from your phone without needing coins or a kiosk.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>3. What are the advantages of ParkMobile?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">ParkMobile allows you to pay contactlessly, extend your parking session remotely, and receive notifications when your time is about to expire.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>4. How do I set up my account with ParkMobile?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Download the ParkMobile app from the App Store or Google Play, create an account, add your vehicle and payment method, then enter the zone number for your parking area.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>5. How much does using ParkMobile cost and is there a transaction fee?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Hourly rates vary by zone. A small convenience fee may be charged per transaction. Rates are displayed in the app before you confirm your session.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>6. Can I move from zone to zone during my park stay?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">No. Your ParkMobile session is tied to a specific zone. If you move to a different zone, you must start a new session for that zone.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>7. Where are the zone numbers posted?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Zone numbers are posted on signs throughout the parking area. Look for blue ParkMobile signs with the zone number displayed.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>8. Can I get a receipt if I use ParkMobile?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Yes. Receipts are sent automatically to your registered email address after each parking session.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>9. Is it safe to do a credit card transaction on a mobile phone like this?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Yes. ParkMobile uses industry-standard encryption to protect your payment information. Your card details are stored securely and are never transmitted in plain text.</div>
+          </div>
+        </div>
+
+        <!-- PARKING ENFORCEMENT & CITATIONS -->
+        <div class="faq-section">
+          <h2 class="faq-section-title">Parking Enforcement &amp; Citations</h2>
+          <div style="border:1px solid #e0e3e8; border-bottom:none;">
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>1. What are the hours for parking enforcement?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Parking is enforced at all times — 24 hours a day, 7 days a week, including nights, weekends, and academic breaks.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>2. What do I need to know before parking on campus?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">You must have a valid permit registered to your license plate. Your plate must face the drive lane. Permits are required at all times including weekends and breaks.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>3. Why do I need to have my license plate face the drive lane?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Enforcement officers use license plate readers that scan plates from the drive lane. If your plate is not visible, your permit cannot be verified and you may receive a citation.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>4. How do I know if I have received a parking citation?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">You will receive an email notification. You can also log into your vPermit account to check for any outstanding citations.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>5. What is the difference between the issuance date and citation date?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">The issuance date is when the citation was written. The citation date is the date the violation occurred. These are typically the same date.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>6. How do I pay a parking citation?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Pay your citation online through the <a href="https://vpermit.com/parkutoledo/Account/Login" target="_blank" rel="noopener" style="color:#005CB9;">vPermit portal</a>. Log in and navigate to your citations to make a payment.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>7. How long do I have to pay a parking citation?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Citations must be paid within 14 days of issuance to avoid late fees. If you wish to appeal, you must do so within 14 days.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>8. What happens if I pay a citation late?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Late payments will incur additional fees. Unpaid citations may also affect your ability to register for classes or receive university services.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>9. Why do I see additional charges when I use my credit card?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">A convenience fee is applied for credit card payments. This fee is charged by the payment processor and is not retained by ParkUToledo.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>10. What happens if there is a snow emergency?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">During a declared snow emergency, parking regulations may be altered. Follow announcements from the University for specific instructions on where to move your vehicle.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>11. My citation status shows as "Transferred" - what does this mean?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">"Transferred" means your citation has been sent to the University's student accounts or HR department and will be handled through your tuition or payroll account.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>12. I would like to appeal my ticket, what should the appeal date?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Appeals must be submitted within 14 days of the citation issuance date. Log into the vPermit portal and navigate to your citation to submit an appeal.</div>
+          </div>
+        </div>
+
+        <!-- THE APPEAL PROCESS -->
+        <div class="faq-section">
+          <h2 class="faq-section-title">The Appeal Process</h2>
+          <div style="border:1px solid #e0e3e8; border-bottom:none;">
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>1. Can I appeal a parking citation?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Yes. You may appeal a citation within 14 days of issuance through the vPermit portal.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>2. How do I appeal a citation?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Log into your <a href="https://vpermit.com/parkutoledo/Account/Login" target="_blank" rel="noopener" style="color:#005CB9;">vPermit account</a>, locate the citation, and select "Appeal." Provide your reason and any supporting documentation.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>3. How do I know if my appeal was approved?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">You will receive an email notification once your appeal has been reviewed. You can also check the status in your vPermit account.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>4. How long does the appeal process take?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Appeals are typically reviewed within 5–10 business days. You will be notified by email of the decision.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>5. If I appeal, do I still have to pay my citation?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">You do not need to pay while your appeal is pending. If the appeal is denied, the original fine is due immediately.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>6. What are valid grounds for an appeal?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">Valid grounds include: signage errors, medical emergencies, vehicle malfunction, or proof that a valid permit was purchased but not properly registered.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>7. Can I appeal the same citation more than once?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">No. Each citation may only be appealed once. The appeal decision is final.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>8. My citation status shows as "Transferred" - what does this mean?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">"Transferred" means the citation has been forwarded to the University's student accounts or payroll office and will be deducted from your account.</div>
+
+            <button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false">
+              <span>9. I would like to appeal my ticket, what should the appeal date?</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-content">You must appeal within 14 days of the citation issuance date. Appeals submitted after this deadline will not be accepted.</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background:#0D2352;">
+    <div class="max-w-[1200px] mx-auto px-5 lg:px-10 py-16">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:48px;">
+        <div>
+          <img src="images/footer-logo.png" alt="ParkUToledo" style="height:56px; width:auto; margin-bottom:16px; display:block;" />
+          <p style="color:#BEC6C3; font-size:14px; line-height:1.7; margin-bottom:20px;">Parking management for The University of Toledo.</p>
+          <div style="display:flex; gap:12px;">
+            <a href="#" aria-label="Facebook" style="width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; color:#BEC6C3;" onmouseover="this.style.borderColor='#FFDA00';this.style.color='#FFDA00'" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)';this.style.color='#BEC6C3'">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter / X" style="width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; color:#BEC6C3;" onmouseover="this.style.borderColor='#FFDA00';this.style.color='#FFDA00'" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)';this.style.color='#BEC6C3'">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:14px; font-weight:400; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Quick Links</h3>
+          <nav aria-label="Footer navigation">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="students.html" class="footer-link">Permit Parking</a>
+            <a href="visitors.html" class="footer-link">Visitor Parking</a>
+            <a href="citations.html" class="footer-link">Enforcement &amp; Citations</a>
+            <a href="citations.html" class="footer-link">Appeals</a>
+            <a href="faqs.html" class="footer-link">FAQs</a>
+            <a href="#" class="footer-link">Employment Opportunites</a>
+            <a href="rules-regulations.html" class="footer-link">User Guides</a>
+            <a href="news.html" class="footer-link">Parking News</a>
+            <a href="contact.html" class="footer-link">Contact Parking</a>
+            <a href="contact.html" class="footer-link">About Us</a>
+          </nav>
+        </div>
+        <div>
+          <h3 style="font-size:14px; font-weight:400; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Contact</h3>
+          <address style="font-style:normal;">
+            <p style="color:#BEC6C3; font-size:14px; line-height:1.7; margin-bottom:8px;">2801 W. Bancroft St<br/>Mail Stop 107<br/>Toledo, OH 43606</p>
+            <a href="mailto:info@parkutoledo.com" class="footer-link">info@parkutoledo.com</a>
+            <p style="color:#BEC6C3; font-size:13px; line-height:1.6; margin-top:8px;">Mon–Fri: 7AM–5PM</p>
+          </address>
+        </div>
+        <div>
+          <h3 style="font-size:14px; font-weight:400; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Parking Portals</h3>
+          <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" class="btn-gold" style="font-size:14px; padding:12px 24px; margin-bottom:12px; display:block; text-align:center;">Parking Portal</a>
+          <a href="https://parkmobile.io" target="_blank" rel="noopener" style="display:block; text-align:center; padding:10px 24px; border-radius:4px; border:1px solid rgba(255,255,255,0.25); color:#BEC6C3; font-size:14px; font-weight:400; text-decoration:none;" onmouseover="this.style.color='#FFDA00';this.style.borderColor='#FFDA00'" onmouseout="this.style.color='#BEC6C3';this.style.borderColor='rgba(255,255,255,0.25)'">ParkMobile</a>
+        </div>
+      </div>
+    </div>
+    <div style="background:#091A3A; border-top:1px solid rgba(255,255,255,0.06);">
+      <div class="max-w-[1200px] mx-auto px-5 lg:px-10 py-4 flex flex-wrap justify-between items-center gap-2">
+        <p style="color:#A0ACAA; font-size:13px; margin:0;">© 2026 ParkUToledo. The University of Toledo.</p>
+        <div style="display:flex; gap:20px;">
+          <a href="#" style="color:#A0ACAA; font-size:13px; text-decoration:none;" onmouseover="this.style.color='#FFDA00'" onmouseout="this.style.color='#A0ACAA'">Privacy Policy</a>
+          <a href="#" style="color:#A0ACAA; font-size:13px; text-decoration:none;" onmouseover="this.style.color='#FFDA00'" onmouseout="this.style.color='#A0ACAA'">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFaq(btn) {
+      const content = btn.nextElementSibling;
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      if (isOpen) {
+        content.style.display = 'none';
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        content.style.display = 'block';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    }
+    document.getElementById('hamburger-btn').addEventListener('click', function() {
+      const m = document.getElementById('mobile-menu'); m.classList.toggle('open'); this.setAttribute('aria-expanded', m.classList.contains('open'));
+    });
+  </script>
+</body>
+</html>
