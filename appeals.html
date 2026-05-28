@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appeals — ParkUToledo</title>
+  <meta name="description" content="Appeal a parking citation at The University of Toledo. Learn about first appeals and second appeals through the ParkUToledo portal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ut-blue': '#15397F', 'ut-gold': '#FFDA00', 'ut-dark': '#0D2352',
+            'ut-gray-light': '#BEC6C3', 'ut-gray-mid': '#A0ACAA',
+            'ut-text': '#1A1A1A', 'ut-bg-light': '#F5F6F8',
+          },
+          fontFamily: { poppins: ['Poppins', 'sans-serif'] },
+        },
+      },
+    }
+  </script>
+  <style>
+    * { font-family: 'Poppins', sans-serif; }
+    html { scroll-behavior: smooth; }
+    .nav-link { color:#FFDA00; font-size:13px; font-weight:400; letter-spacing:0.06em; text-transform:uppercase; padding:4px 0; position:relative; text-decoration:none; transition:color 0.2s; }
+    .nav-link:hover { color:#fff; }
+    .nav-link.active { color:#fff; border-bottom:2px solid #FFDA00; padding-bottom:2px; }
+    .nav-link-login { color:#fff; background:transparent; border:1px solid rgba(255,255,255,0.4); border-radius:3px; padding:5px 14px; font-size:13px; font-weight:400; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; transition:background 0.2s; }
+    .nav-link-login:hover { background:rgba(255,255,255,0.15); }
+    .footer-link { color:#BEC6C3; font-size:14px; text-decoration:none; transition:color 0.2s; display:block; margin-bottom:8px; }
+    .footer-link:hover { color:#FFDA00; }
+    #mobile-menu { display:none; }
+    #mobile-menu.open { display:block; }
+    .hamburger-line { display:block; width:24px; height:2px; background:#fff; margin:5px 0; transition:transform 0.2s, opacity 0.2s; }
+    a:focus-visible, button:focus-visible { outline:2px solid #FFDA00; outline-offset:2px; border-radius:2px; }
+    .section-heading { font-size:clamp(20px,2.5vw,28px); font-weight:700; color:#15397F; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:24px; }
+  </style>
+</head>
+<body class="bg-white text-ut-text">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50" style="background:#15397F; box-shadow:0 2px 8px rgba(0,0,0,0.18);">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10" style="height:72px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+      <a href="index.html" class="flex-shrink-0" style="display:flex; align-items:center; text-decoration:none;">
+        <span style="display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; background:#FFDA00; border-radius:50%; font-size:20px; font-weight:900; color:#15397F; font-style:italic; letter-spacing:-0.04em;">P</span>
+        <span style="font-size:20px; font-weight:500; color:#fff; margin-left:4px; letter-spacing:-0.01em;">ark</span>
+        <span style="font-size:20px; font-weight:900; color:#FFDA00; letter-spacing:-0.01em;">U</span>
+        <span style="font-size:20px; font-weight:500; color:#fff; letter-spacing:-0.01em;">Toledo</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-5 xl:gap-7 flex-1 justify-end mr-4" aria-label="Primary navigation">
+        <a href="https://vpermit.com/parkutoledo/Account/Login" target="_blank" rel="noopener" class="nav-link-login">Log In</a>
+        <a href="permit-parking.html" class="nav-link">Permit Parking</a>
+        <a href="visitor-parking.html" class="nav-link">Visitor Parking</a>
+        <a href="find-parking.html" class="nav-link">Find Parking</a>
+        <a href="user-guides.html" class="nav-link">User Guides</a>
+        <a href="holidays-and-global-days.html" class="nav-link">Holidays and Global Days</a>
+        <a href="faqs.html" class="nav-link">FAQs</a>
+        <a href="contact-parking.html" class="nav-link">Contact Parking</a>
+      </nav>
+      <button id="hamburger-btn" class="lg:hidden flex flex-col justify-center p-2" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="lg:hidden absolute top-full left-0 w-full z-50 pb-4 border-t border-white/10" style="background:#0D2352;">
+      <div class="max-w-[1400px] mx-auto px-6 pt-4 flex flex-col gap-1">
+        <a href="https://vpermit.com/parkutoledo/Account/Login" target="_blank" rel="noopener" class="nav-link py-2 border-b border-white/10">Log In</a>
+        <a href="permit-parking.html" class="nav-link py-2 border-b border-white/10">Permit Parking</a>
+        <a href="visitor-parking.html" class="nav-link py-2 border-b border-white/10">Visitor Parking</a>
+        <a href="find-parking.html" class="nav-link py-2 border-b border-white/10">Find Parking</a>
+        <a href="user-guides.html" class="nav-link py-2 border-b border-white/10">User Guides</a>
+        <a href="holidays-and-global-days.html" class="nav-link py-2 border-b border-white/10">Holidays and Global Days</a>
+        <a href="faqs.html" class="nav-link py-2 border-b border-white/10">FAQs</a>
+        <a href="contact-parking.html" class="nav-link py-2 border-b border-white/10">Contact Parking</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="position:relative; min-height:480px; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+    <img src="images/permit-parking.jpeg" alt="" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top;" />
+    <div style="position:absolute; inset:0; background:rgba(10,20,40,0.58);"></div>
+    <div style="position:relative; z-index:2; background:#fff; border-radius:16px; padding:48px 64px; text-align:center; max-width:520px; width:calc(100% - 48px); box-shadow:0 8px 40px rgba(0,0,0,0.28);">
+      <h1 style="font-size:clamp(22px,3vw,30px); font-weight:700; color:#0D2352; line-height:1.25; margin-bottom:16px; letter-spacing:0.04em; text-transform:uppercase;">Appeals &amp; Second Appeals</h1>
+      <p style="font-size:15px; color:#1A1A1A; margin-bottom:28px; line-height:1.6;">Appeal parking citations on the safe and secure parking portal.</p>
+      <a href="https://vpermit.com/parkutoledo/Account/Login" target="_blank" rel="noopener" style="display:inline-block; background:#FFDA00; color:#1A1A1A; font-size:15px; font-weight:500; padding:14px 32px; border-radius:6px; text-decoration:none; transition:background 0.2s;" onmouseover="this.style.background='#e5c500'" onmouseout="this.style.background='#FFDA00'">Login/Create Account</a>
+    </div>
+  </section>
+
+  <main>
+    <div class="max-w-[1100px] mx-auto px-5 lg:px-10" style="padding-top:64px; padding-bottom:80px;">
+
+      <!-- APPEALS & SECOND APPEALS -->
+      <h2 class="section-heading">Appeals &amp; Second Appeals</h2>
+
+      <p style="font-size:16px; color:#1A1A1A; line-height:1.7; margin-bottom:20px;">
+        To pay or appeal a parking citation, please <a href="https://vpermit.com/parkutoledo/Account/Login" target="_blank" rel="noopener" style="color:#15397F; text-decoration:underline;">log in to your account</a> and select the "My Citations" tab. If you do not have an account, please <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" style="color:#15397F; text-decoration:underline;">click here.</a>
+      </p>
+
+      <ul style="list-style:disc; padding-left:24px; margin-bottom:32px;">
+        <li style="font-size:16px; color:#1A1A1A; line-height:1.7; margin-bottom:16px; font-weight:500;">
+          Appeals:
+          <ul style="list-style:disc; padding-left:24px; margin-top:12px; font-weight:400;">
+            <li style="font-size:16px; color:#1A1A1A; line-height:1.7; margin-bottom:12px;">
+              You may appeal a citation if you feel your vehicle was parked in accordance with <a href="user-guides.html" style="color:#15397F; text-decoration:underline;">ParkUToledo's Rules and Regulations</a> and, therefore, the citation was issued in error. Eligible violations must be appealed within 10 calendar days of the issuance date.
+            </li>
+            <li style="font-size:16px; color:#1A1A1A; line-height:1.7;">
+              To submit an appeal, please <a href="https://vpermit.com/parkutoledo/Account/Login" target="_blank" rel="noopener" style="color:#15397F; text-decoration:underline;">log in to your account</a> and select the "My Citations" tab. If you do not have an account, please <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" style="color:#15397F; text-decoration:underline;">click here.</a>
+            </li>
+          </ul>
+        </li>
+
+        <li style="font-size:16px; color:#1A1A1A; line-height:1.7; margin-bottom:16px; font-weight:500;">
+          Second Appeals:
+          <ul style="list-style:disc; padding-left:24px; margin-top:12px; font-weight:400;">
+            <li style="font-size:16px; color:#1A1A1A; line-height:1.7; margin-bottom:12px;">
+              While first appeals are approved only if it is determined that the citation was issued in error (i.e., the customer was parked in accordance with <a href="user-guides.html" style="color:#15397F; text-decoration:underline;">ParkUToledo's Rules and Regulations</a>), the Second Appeals Committee has the unique opportunity to exercise broader discretion, taking into account additional factors and circumstances.
+            </li>
+            <li style="font-size:16px; color:#1A1A1A; line-height:1.7;">
+              Customers may submit a second appeal if their citation is upheld. While first appeals require proof that the citation was issued in error, the Second Appeals Committee considers broader factors and circumstances. To submit a second appeal, complete a <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" style="color:#15397F; text-decoration:underline;">Second Appeals Form.</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background:#0D2352;">
+    <div class="max-w-[1200px] mx-auto px-5 lg:px-10 py-16">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:48px;">
+        <div>
+          <img src="images/footer-logo.png" alt="ParkUToledo" style="height:56px; width:auto; margin-bottom:16px; display:block;" />
+          <p style="color:#BEC6C3; font-size:14px; line-height:1.7; margin-bottom:20px;">Parking management for The University of Toledo.</p>
+          <div style="display:flex; gap:12px;">
+            <a href="#" aria-label="Facebook" style="width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; color:#BEC6C3;" onmouseover="this.style.borderColor='#FFDA00';this.style.color='#FFDA00'" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)';this.style.color='#BEC6C3'">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter / X" style="width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center; color:#BEC6C3;" onmouseover="this.style.borderColor='#FFDA00';this.style.color='#FFDA00'" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)';this.style.color='#BEC6C3'">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:14px; font-weight:400; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Quick Links</h3>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="permit-parking.html" class="footer-link">Permit Parking</a>
+          <a href="visitor-parking.html" class="footer-link">Visitor Parking</a>
+          <a href="citations.html" class="footer-link">Enforcement &amp; Citations</a>
+          <a href="appeals.html" class="footer-link">Appeals</a>
+          <a href="faqs.html" class="footer-link">FAQs</a>
+          <a href="#" class="footer-link">Employment Opportunities</a>
+          <a href="user-guides.html" class="footer-link">User Guides</a>
+          <a href="news.html" class="footer-link">Parking News</a>
+          <a href="contact-parking.html" class="footer-link">Contact Parking</a>
+          <a href="contact-parking.html" class="footer-link">About Us</a>
+        </div>
+        <div>
+          <h3 style="font-size:14px; font-weight:400; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Contact</h3>
+          <p style="color:#BEC6C3; font-size:14px; line-height:1.7; margin-bottom:8px;">2801 W. Bancroft St<br/>Mail Stop 107<br/>Toledo, OH 43606</p>
+          <a href="mailto:info@parkutoledo.com" class="footer-link">info@parkutoledo.com</a>
+          <p style="color:#BEC6C3; font-size:13px; line-height:1.6; margin-top:8px;">Mon–Fri: 7AM–5PM</p>
+        </div>
+        <div>
+          <h3 style="font-size:14px; font-weight:400; color:#fff; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Parking Portals</h3>
+          <a href="https://vpermit.com/parkutoledo/" target="_blank" rel="noopener" style="display:block; text-align:center; padding:12px 24px; border-radius:4px; background:#FFDA00; color:#15397F; font-size:14px; font-weight:400; text-decoration:none; margin-bottom:12px;">Parking Portal</a>
+          <a href="https://parkmobile.io" target="_blank" rel="noopener" style="display:block; text-align:center; padding:10px 24px; border-radius:4px; border:1px solid rgba(255,255,255,0.25); color:#BEC6C3; font-size:14px; text-decoration:none;" onmouseover="this.style.color='#FFDA00';this.style.borderColor='#FFDA00'" onmouseout="this.style.color='#BEC6C3';this.style.borderColor='rgba(255,255,255,0.25)'">ParkMobile</a>
+        </div>
+      </div>
+    </div>
+    <div style="background:#091A3A; border-top:1px solid rgba(255,255,255,0.06);">
+      <div class="max-w-[1200px] mx-auto px-5 lg:px-10 py-4 flex flex-wrap justify-between items-center gap-2">
+        <p style="color:#A0ACAA; font-size:13px; margin:0;">© 2026 ParkUToledo. The University of Toledo.</p>
+        <div style="display:flex; gap:20px;">
+          <a href="#" style="color:#A0ACAA; font-size:13px; text-decoration:none;" onmouseover="this.style.color='#FFDA00'" onmouseout="this.style.color='#A0ACAA'">Privacy Policy</a>
+          <a href="#" style="color:#A0ACAA; font-size:13px; text-decoration:none;" onmouseover="this.style.color='#FFDA00'" onmouseout="this.style.color='#A0ACAA'">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburgerBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburgerBtn.setAttribute('aria-expanded', isOpen.toString());
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
