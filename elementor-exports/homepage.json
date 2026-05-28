@@ -1,0 +1,419 @@
+{
+  "version": "0.4",
+  "title": "ParkUToledo — Homepage",
+  "type": "page",
+  "content": [
+
+    {
+      "id": "ann00001",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "_title": "Announcement Bar",
+        "content_width": "full",
+        "flex_direction": "row",
+        "flex_align_items": "center",
+        "flex_justify_content": "center",
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "border_border": "solid",
+        "border_width": { "unit": "px", "top": "0", "right": "0", "bottom": "1", "left": "0", "isLinked": false },
+        "border_color": "#e5e7eb",
+        "padding": { "unit": "px", "top": "10", "right": "20", "bottom": "10", "left": "20", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "ann00002",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p style=\"font-size:14px;font-weight:500;color:#1A1A1A;line-height:1.5;text-align:center;\">Please remember that parking permits are required at all times including nights and weekends, in between semesters and academic breaks.</p>"
+          },
+          "elements": []
+        }
+      ]
+    },
+
+    {
+      "id": "her00001",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "_title": "Hero Section",
+        "content_width": "full",
+        "min_height": { "unit": "px", "size": 600, "sizes": [] },
+        "flex_direction": "column",
+        "flex_align_items": "center",
+        "flex_justify_content": "center",
+        "background_background": "classic",
+        "background_image": { "url": "https://parkutoledo.netlify.app/images/hero-image.jpg", "id": 0, "size": "", "alt": "", "source": "library" },
+        "background_position": "top center",
+        "background_size": "cover",
+        "background_repeat": "no-repeat",
+        "background_overlay_background": "classic",
+        "background_overlay_color": "rgba(10,20,40,0.58)"
+      },
+      "elements": [
+        {
+          "id": "her00002",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "_title": "Hero Card (Inner)",
+            "width": { "unit": "px", "size": 520, "sizes": [] },
+            "flex_direction": "column",
+            "flex_align_items": "stretch",
+            "background_background": "classic",
+            "background_color": "#ffffff",
+            "border_radius": { "unit": "px", "top": "16", "right": "16", "bottom": "16", "left": "16", "isLinked": true },
+            "padding": { "unit": "px", "top": "56", "right": "64", "bottom": "56", "left": "64", "isLinked": false },
+            "box_shadow_box_shadow_type": "yes",
+            "box_shadow_box_shadow": { "horizontal": 0, "vertical": 8, "blur": 40, "spread": 0, "color": "rgba(0,0,0,0.28)", "position": "" }
+          },
+          "elements": [
+            {
+              "id": "her00003",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Welcome to ParkUToledo!",
+                "header_size": "h1",
+                "align": "center",
+                "title_color": "#0D2352",
+                "typography_typography": "custom",
+                "typography_font_family": "Poppins",
+                "typography_font_size": { "unit": "px", "size": 36, "sizes": [] },
+                "typography_font_weight": "600",
+                "typography_letter_spacing": { "unit": "em", "size": -0.02, "sizes": [] },
+                "typography_line_height": { "unit": "em", "size": 1.25, "sizes": [] },
+                "_margin": { "unit": "px", "top": "0", "right": "0", "bottom": "36", "left": "0", "isLinked": false }
+              },
+              "elements": []
+            },
+            {
+              "id": "her00004",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Log In/Sign Up",
+                "link": { "url": "https://vpermit.com/parkutoledo/Account/Login", "is_external": "on", "nofollow": "on" },
+                "align": "justify",
+                "background_color": "#FFDA00",
+                "button_text_color": "#1A1A1A",
+                "button_hover_background_color": "#e5c500",
+                "border_radius": { "unit": "px", "top": "6", "right": "6", "bottom": "6", "left": "6", "isLinked": true },
+                "typography_typography": "custom",
+                "typography_font_family": "Poppins",
+                "typography_font_size": { "unit": "px", "size": 15, "sizes": [] },
+                "typography_font_weight": "400",
+                "text_padding": { "unit": "px", "top": "16", "right": "32", "bottom": "16", "left": "32", "isLinked": false },
+                "_margin": { "unit": "px", "top": "0", "right": "0", "bottom": "14", "left": "0", "isLinked": false }
+              },
+              "elements": []
+            },
+            {
+              "id": "her00005",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Parking Questions? Contact Parking",
+                "link": { "url": "contact-parking/", "is_external": "", "nofollow": "" },
+                "align": "justify",
+                "background_color": "#FFDA00",
+                "button_text_color": "#1A1A1A",
+                "button_hover_background_color": "#e5c500",
+                "border_radius": { "unit": "px", "top": "6", "right": "6", "bottom": "6", "left": "6", "isLinked": true },
+                "typography_typography": "custom",
+                "typography_font_family": "Poppins",
+                "typography_font_size": { "unit": "px", "size": 15, "sizes": [] },
+                "typography_font_weight": "400",
+                "text_padding": { "unit": "px", "top": "16", "right": "32", "bottom": "16", "left": "32", "isLinked": false },
+                "_margin": { "unit": "px", "top": "0", "right": "0", "bottom": "14", "left": "0", "isLinked": false }
+              },
+              "elements": []
+            },
+            {
+              "id": "her00006",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Rules &amp; Regulations",
+                "link": { "url": "user-guides/", "is_external": "", "nofollow": "" },
+                "align": "justify",
+                "background_color": "#FFDA00",
+                "button_text_color": "#1A1A1A",
+                "button_hover_background_color": "#e5c500",
+                "border_radius": { "unit": "px", "top": "6", "right": "6", "bottom": "6", "left": "6", "isLinked": true },
+                "typography_typography": "custom",
+                "typography_font_family": "Poppins",
+                "typography_font_size": { "unit": "px", "size": 15, "sizes": [] },
+                "typography_font_weight": "400",
+                "text_padding": { "unit": "px", "top": "16", "right": "32", "bottom": "16", "left": "32", "isLinked": false }
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "cat00001",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "_title": "Parking Categories Section",
+        "content_width": "boxed",
+        "width": { "unit": "px", "size": 1200, "sizes": [] },
+        "flex_direction": "column",
+        "flex_align_items": "stretch",
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "padding": { "unit": "px", "top": "72", "right": "20", "bottom": "80", "left": "20", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "cat00002",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Parking Categories",
+            "header_size": "h2",
+            "align": "center",
+            "title_color": "#0D2352",
+            "typography_typography": "custom",
+            "typography_font_family": "Poppins",
+            "typography_font_size": { "unit": "px", "size": 32, "sizes": [] },
+            "typography_font_weight": "600",
+            "typography_letter_spacing": { "unit": "em", "size": 0.12, "sizes": [] },
+            "typography_text_transform": "uppercase",
+            "_margin": { "unit": "px", "top": "0", "right": "0", "bottom": "40", "left": "0", "isLinked": false }
+          },
+          "elements": []
+        },
+        {
+          "id": "cat00003",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "Parking Categories Accordion",
+            "html": "<style>.pc-item+.pc-item{border-top:1px solid #c8cdd4}.pc-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:#e9eaec;border:none;cursor:pointer;font-size:17px;font-weight:400;color:#0D2352;font-family:'Poppins',sans-serif;text-align:left;transition:background 0.15s}.pc-btn:hover{background:#dde0e4}.pc-btn--open{background:#0D2352;color:#fff}.pc-btn--open:hover{background:#0a1e47}.pc-chevron{flex-shrink:0;transition:transform 0.2s}.pc-body{padding:28px 24px 32px;background:#fff}</style><div style=\"border:1px solid #c8cdd4;border-radius:4px;overflow:hidden;\"><div class=\"pc-item\"><button class=\"pc-btn pc-btn--open\" aria-expanded=\"true\" aria-controls=\"pc-permit-body\" onclick=\"togglePC(this)\"><span>Permit Parking</span><svg class=\"pc-chevron\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\"><path d=\"M18 15l-6-6-6 6\"/></svg></button><div class=\"pc-body\" id=\"pc-permit-body\" style=\"display:block;\"><div style=\"display:flex;flex-direction:column;gap:24px;\"><div><a href=\"/permit-parking/\" style=\"font-size:16px;font-weight:500;color:#0D2352;text-decoration:underline;display:inline-block;margin-bottom:4px;\">Parking Permits</a><p style=\"font-size:15px;color:#1A1A1A;margin:0;line-height:1.6;\">Purchase Daily, Monthly and Fixed Term Permits <a href=\"https://vpermit.com/parkutoledo/\" target=\"_blank\" rel=\"noopener\" style=\"color:#0D2352;font-weight:400;text-decoration:underline;\">Here</a></p></div><div><a href=\"/daily-hourly/\" style=\"font-size:16px;font-weight:500;color:#0D2352;text-decoration:underline;display:inline-block;margin-bottom:4px;\">Purchase Hourly</a><p style=\"font-size:15px;color:#1A1A1A;margin:0;line-height:1.6;\">Parking - Purchase Hourly Parking Through <a href=\"https://parkmobile.io\" target=\"_blank\" rel=\"noopener\" style=\"color:#0D2352;font-weight:400;text-decoration:underline;\">ParkMobile</a></p></div><div><a href=\"/patient-visitor/\" style=\"font-size:16px;font-weight:500;color:#0D2352;text-decoration:underline;display:inline-block;margin-bottom:4px;\">Park In Patient Areas</a><p style=\"font-size:15px;color:#1A1A1A;margin:0;line-height:1.6;\">Register to Park as a Patient at <a href=\"https://www.utmc.com/\" target=\"_blank\" rel=\"noopener\" style=\"color:#0D2352;font-weight:400;text-decoration:underline;\">UTMC</a></p></div></div></div></div><div class=\"pc-item\"><button class=\"pc-btn\" aria-expanded=\"false\" aria-controls=\"pc-visitor-body\" onclick=\"togglePC(this)\"><span>Visitor Parking</span><svg class=\"pc-chevron\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\"><path d=\"M6 9l6 6 6-6\"/></svg></button><div class=\"pc-body\" id=\"pc-visitor-body\" style=\"display:none;\"><div style=\"display:flex;flex-direction:column;gap:24px;\"><div><a href=\"/visitor-parking/\" style=\"font-size:16px;font-weight:500;color:#0D2352;text-decoration:underline;display:inline-block;margin-bottom:4px;\">Guest / Visitor Parking</a><p style=\"font-size:15px;color:#1A1A1A;margin:0;line-height:1.6;\">Purchase a daily visitor permit online or via <a href=\"https://parkmobile.io\" target=\"_blank\" rel=\"noopener\" style=\"color:#0D2352;font-weight:400;text-decoration:underline;\">ParkMobile</a> for hourly parking.</p></div></div></div></div><div class=\"pc-item\"><button class=\"pc-btn\" aria-expanded=\"false\" aria-controls=\"pc-event-body\" onclick=\"togglePC(this)\"><span>Event Parking</span><svg class=\"pc-chevron\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\"><path d=\"M6 9l6 6 6-6\"/></svg></button><div class=\"pc-body\" id=\"pc-event-body\" style=\"display:none;\"><div style=\"display:flex;flex-direction:column;gap:24px;\"><div><a href=\"/department-event/\" style=\"font-size:16px;font-weight:500;color:#0D2352;text-decoration:underline;display:inline-block;margin-bottom:4px;\">Department Event Parking</a><p style=\"font-size:15px;color:#1A1A1A;margin:0;line-height:1.6;\">Request designated parking for campus events. 72-hour advance notice required.</p></div><div><a href=\"/holidays-and-global-days/\" style=\"font-size:16px;font-weight:500;color:#0D2352;text-decoration:underline;display:inline-block;margin-bottom:4px;\">Game Day Parking</a><p style=\"font-size:15px;color:#1A1A1A;margin:0;line-height:1.6;\">Information for D, C, and K permit holders on home football and basketball game days.</p></div></div></div></div><div class=\"pc-item\"><button class=\"pc-btn\" aria-expanded=\"false\" aria-controls=\"pc-enforcement-body\" onclick=\"togglePC(this)\"><span>Enforcement &amp; Citations</span><svg class=\"pc-chevron\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\"><path d=\"M6 9l6 6 6-6\"/></svg></button><div class=\"pc-body\" id=\"pc-enforcement-body\" style=\"display:none;\"><div style=\"display:flex;flex-direction:column;gap:24px;\"><div><a href=\"/citations/\" style=\"font-size:16px;font-weight:500;color:#0D2352;text-decoration:underline;display:inline-block;margin-bottom:4px;\">Pay or Appeal a Citation</a><p style=\"font-size:15px;color:#1A1A1A;margin:0;line-height:1.6;\">Enforcement hours: Mon&ndash;Fri 7AM&ndash;10PM, Sat&ndash;Sun 9AM&ndash;5PM. Pay or appeal via <a href=\"https://vpermit.com/parkutoledo/\" target=\"_blank\" rel=\"noopener\" style=\"color:#0D2352;font-weight:400;text-decoration:underline;\">the portal</a>.</p></div></div></div></div><div class=\"pc-item\"><button class=\"pc-btn\" aria-expanded=\"false\" aria-controls=\"pc-appeals-body\" onclick=\"togglePC(this)\"><span>Appeals</span><svg class=\"pc-chevron\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\"><path d=\"M6 9l6 6 6-6\"/></svg></button><div class=\"pc-body\" id=\"pc-appeals-body\" style=\"display:none;\"><div style=\"display:flex;flex-direction:column;gap:24px;\"><div><a href=\"/citations/#appeals\" style=\"font-size:16px;font-weight:500;color:#0D2352;text-decoration:underline;display:inline-block;margin-bottom:4px;\">Citation Appeals</a><p style=\"font-size:15px;color:#1A1A1A;margin:0;line-height:1.6;\">Appeals must be filed within 10 calendar days of the citation date. Log in to the Parking Portal to submit your appeal. All decisions are final.</p></div></div></div></div><div class=\"pc-item\"><button class=\"pc-btn\" aria-expanded=\"false\" aria-controls=\"pc-holidays-body\" onclick=\"togglePC(this)\"><span>Holidays &amp; Global Days</span><svg class=\"pc-chevron\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\"><path d=\"M6 9l6 6 6-6\"/></svg></button><div class=\"pc-body\" id=\"pc-holidays-body\" style=\"display:none;\"><div style=\"display:flex;flex-direction:column;gap:24px;\"><div><a href=\"/holidays-and-global-days/\" style=\"font-size:16px;font-weight:500;color:#0D2352;text-decoration:underline;display:inline-block;margin-bottom:4px;\">Parking on University Holidays</a><p style=\"font-size:15px;color:#1A1A1A;margin:0;line-height:1.6;\">Parking enforcement schedules may vary on university holidays and designated global days.</p></div></div></div></div><div class=\"pc-item\"><button class=\"pc-btn\" aria-expanded=\"false\" aria-controls=\"pc-guides-body\" onclick=\"togglePC(this)\"><span>User Guides</span><svg class=\"pc-chevron\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\"><path d=\"M6 9l6 6 6-6\"/></svg></button><div class=\"pc-body\" id=\"pc-guides-body\" style=\"display:none;\"><div style=\"display:flex;flex-direction:column;gap:24px;\"><div><a href=\"/user-guides/\" style=\"font-size:16px;font-weight:500;color:#0D2352;text-decoration:underline;display:inline-block;margin-bottom:4px;\">Rules &amp; Regulations</a><p style=\"font-size:15px;color:#1A1A1A;margin:0;line-height:1.6;\">Complete parking rules, violation codes, and fine schedule. <a href=\"https://content.parkutoledo.com/media/kpbbtlt0/parkutoledo-parking-rules-and-regulations.pdf\" target=\"_blank\" rel=\"noopener\" style=\"color:#0D2352;font-weight:400;text-decoration:underline;\">Download PDF</a>.</p></div></div></div></div><div class=\"pc-item\"><button class=\"pc-btn\" aria-expanded=\"false\" aria-controls=\"pc-faqs-body\" onclick=\"togglePC(this)\"><span>Parking FAQs</span><svg class=\"pc-chevron\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\"><path d=\"M6 9l6 6 6-6\"/></svg></button><div class=\"pc-body\" id=\"pc-faqs-body\" style=\"display:none;\"><div style=\"display:flex;flex-direction:column;gap:24px;\"><div><p style=\"font-size:15px;font-weight:500;color:#0D2352;margin:0 0 4px;\">Do I need a permit on weekends?</p><p style=\"font-size:15px;color:#1A1A1A;margin:0;line-height:1.6;\">Yes. Enforcement is active Saturday&ndash;Sunday 9AM&ndash;5PM in all designated areas.</p></div><div><p style=\"font-size:15px;font-weight:500;color:#0D2352;margin:0 0 4px;\">How do I purchase a permit?</p><p style=\"font-size:15px;color:#1A1A1A;margin:0;line-height:1.6;\">Log in to the <a href=\"https://vpermit.com/parkutoledo/\" target=\"_blank\" rel=\"noopener\" style=\"color:#0D2352;font-weight:400;text-decoration:underline;\">Parking Portal</a> to purchase daily, monthly, or semester permits.</p></div><div><p style=\"font-size:15px;font-weight:500;color:#0D2352;margin:0 0 4px;\">How do I appeal a citation?</p><p style=\"font-size:15px;color:#1A1A1A;margin:0;line-height:1.6;\">File an appeal within 10 calendar days via the <a href=\"https://vpermit.com/parkutoledo/\" target=\"_blank\" rel=\"noopener\" style=\"color:#0D2352;font-weight:400;text-decoration:underline;\">Parking Portal</a>. Decisions are final.</p></div></div></div></div></div><script>function togglePC(btn){var isOpen=btn.getAttribute('aria-expanded')==='true';document.querySelectorAll('.pc-btn').forEach(function(b){b.setAttribute('aria-expanded','false');b.classList.remove('pc-btn--open');var id=b.getAttribute('aria-controls');if(id)document.getElementById(id).style.display='none';var p=b.querySelector('path');if(p)p.setAttribute('d','M6 9l6 6 6-6');});if(!isOpen){btn.setAttribute('aria-expanded','true');btn.classList.add('pc-btn--open');var id=btn.getAttribute('aria-controls');if(id)document.getElementById(id).style.display='block';var p=btn.querySelector('path');if(p)p.setAttribute('d','M18 15l-6-6-6 6');}}</script>"
+          },
+          "elements": []
+        }
+      ]
+    },
+
+    {
+      "id": "nws00001",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "_title": "Parking News Section",
+        "content_width": "boxed",
+        "width": { "unit": "px", "size": 1200, "sizes": [] },
+        "flex_direction": "column",
+        "flex_align_items": "stretch",
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "padding": { "unit": "px", "top": "72", "right": "20", "bottom": "80", "left": "20", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "nws00002",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Parking News",
+            "header_size": "h2",
+            "align": "center",
+            "title_color": "#0D2352",
+            "typography_typography": "custom",
+            "typography_font_family": "Poppins",
+            "typography_font_size": { "unit": "px", "size": 40, "sizes": [] },
+            "typography_font_weight": "500",
+            "typography_letter_spacing": { "unit": "em", "size": -0.01, "sizes": [] },
+            "_margin": { "unit": "px", "top": "0", "right": "0", "bottom": "40", "left": "0", "isLinked": false }
+          },
+          "elements": []
+        },
+        {
+          "id": "nws00003",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "News Cards Grid",
+            "html": "<style>.park-news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}@media(max-width:768px){.park-news-grid{grid-template-columns:1fr;}}.park-news-card{position:relative;overflow:hidden;border-radius:4px;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;}.park-news-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}.park-news-overlay{position:absolute;inset:0;background:rgba(10,20,50,0.52);}.park-news-content{position:relative;z-index:2;padding:24px 20px 20px;}.park-news-title{font-size:22px;font-weight:600;color:#fff;line-height:1.3;text-align:center;margin:0 0 20px;font-family:'Poppins',sans-serif;text-shadow:0 1px 4px rgba(0,0,0,0.4);}.park-news-btn{display:block;background:#FFDA00;color:#1A1A1A;font-size:13px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:14px 20px;text-align:center;border-radius:3px;text-decoration:none;font-family:'Poppins',sans-serif;}.park-news-btn:hover{background:#e5c500;}</style><div class=\"park-news-grid\"><div class=\"park-news-card\"><img src=\"https://parkutoledo.netlify.app/images/news-gcm.jpg\" alt=\"2026 GCM Parking Area Closures\"/><div class=\"park-news-overlay\"></div><div class=\"park-news-content\"><h3 class=\"park-news-title\">2026 GCM Parking<br/>Area Closures</h3><a href=\"/news/\" class=\"park-news-btn\">Click Here</a></div></div><div class=\"park-news-card\"><img src=\"https://parkutoledo.netlify.app/images/news-basketball.jpg\" alt=\"2025/26 Basketball Game Day Info for Permit Holders\"/><div class=\"park-news-overlay\"></div><div class=\"park-news-content\"><h3 class=\"park-news-title\">2025/26<br/>Basketball Game<br/>Day Info for<br/>Permit Holders</h3><a href=\"/holidays-and-global-days/\" class=\"park-news-btn\">Click Here</a></div></div><div class=\"park-news-card\"><img src=\"https://parkutoledo.netlify.app/images/news-parking-updates.jpg\" alt=\"Parking Updates for 2025-26 School Year\"/><div class=\"park-news-overlay\"></div><div class=\"park-news-content\"><h3 class=\"park-news-title\">Parking Updates<br/>for 2025-26 School<br/>Year</h3><a href=\"/news/\" class=\"park-news-btn\">Click Here</a></div></div></div>"
+          },
+          "elements": []
+        }
+      ]
+    },
+
+    {
+      "id": "map00001",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "_title": "Main Campus Map Section",
+        "content_width": "boxed",
+        "width": { "unit": "px", "size": 1200, "sizes": [] },
+        "flex_direction": "column",
+        "flex_align_items": "stretch",
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "padding": { "unit": "px", "top": "72", "right": "20", "bottom": "80", "left": "20", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "map00002",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "ParkUToledo - Main Campus",
+            "header_size": "h2",
+            "align": "center",
+            "title_color": "#0D2352",
+            "typography_typography": "custom",
+            "typography_font_family": "Poppins",
+            "typography_font_size": { "unit": "px", "size": 42, "sizes": [] },
+            "typography_font_weight": "500",
+            "typography_letter_spacing": { "unit": "em", "size": -0.01, "sizes": [] },
+            "_margin": { "unit": "px", "top": "0", "right": "0", "bottom": "32", "left": "0", "isLinked": false }
+          },
+          "elements": []
+        },
+        {
+          "id": "map00003",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "Main Campus Map iframe",
+            "html": "<div style=\"border-radius:4px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.10);\"><iframe src=\"https://www.google.com/maps/d/embed?mid=1bsXPpHXyWNrJODGz1Q0x9Q7VQoI&ehbc=2E312F\" width=\"100%\" height=\"580\" style=\"border:0;display:block;\" allowfullscreen=\"\" loading=\"lazy\" title=\"ParkUToledo - Main Campus parking map\"></iframe></div>"
+          },
+          "elements": []
+        }
+      ]
+    },
+
+    {
+      "id": "hsc00001",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "_title": "Health Science Campus Map Section",
+        "content_width": "boxed",
+        "width": { "unit": "px", "size": 1200, "sizes": [] },
+        "flex_direction": "column",
+        "flex_align_items": "stretch",
+        "background_background": "classic",
+        "background_color": "#F5F6F8",
+        "padding": { "unit": "px", "top": "72", "right": "20", "bottom": "80", "left": "20", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "hsc00002",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "ParkUToledo - Health Science Campus",
+            "header_size": "h2",
+            "align": "center",
+            "title_color": "#0D2352",
+            "typography_typography": "custom",
+            "typography_font_family": "Poppins",
+            "typography_font_size": { "unit": "px", "size": 42, "sizes": [] },
+            "typography_font_weight": "500",
+            "typography_letter_spacing": { "unit": "em", "size": -0.01, "sizes": [] },
+            "_margin": { "unit": "px", "top": "0", "right": "0", "bottom": "32", "left": "0", "isLinked": false }
+          },
+          "elements": []
+        },
+        {
+          "id": "hsc00003",
+          "elType": "widget",
+          "widgetType": "html",
+          "settings": {
+            "_title": "Health Science Map iframe",
+            "html": "<div style=\"border-radius:4px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.10);\"><iframe src=\"https://www.google.com/maps/d/embed?mid=1ZaEj1rEbMTbvWdMlr3y73h7Ej4s&ehbc=2E312F\" width=\"100%\" height=\"580\" style=\"border:0;display:block;\" allowfullscreen=\"\" loading=\"lazy\" title=\"ParkUToledo - Health Science Campus parking map\"></iframe></div>"
+          },
+          "elements": []
+        }
+      ]
+    },
+
+    {
+      "id": "pwr00001",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "_title": "Powering Success Banner",
+        "content_width": "full",
+        "min_height": { "unit": "px", "size": 280, "sizes": [] },
+        "flex_direction": "column",
+        "flex_align_items": "center",
+        "flex_justify_content": "center",
+        "background_background": "classic",
+        "background_image": { "url": "https://parkutoledo.netlify.app/images/footer-image.jpeg", "id": 0, "size": "", "alt": "", "source": "library" },
+        "background_position": "center center",
+        "background_size": "cover",
+        "background_repeat": "no-repeat",
+        "background_overlay_background": "classic",
+        "background_overlay_color": "rgba(13,28,70,0.72)",
+        "padding": { "unit": "px", "top": "72", "right": "24", "bottom": "72", "left": "24", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "pwr00002",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p style=\"font-size:13px;font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:0.14em;text-transform:uppercase;text-align:center;margin-bottom:16px;\">We are driven to think smarter, tackle challenges and improve lives.</p>",
+            "_margin": { "unit": "px", "top": "0", "right": "0", "bottom": "0", "left": "0", "isLinked": false }
+          },
+          "elements": []
+        },
+        {
+          "id": "pwr00003",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Powering Success",
+            "header_size": "h2",
+            "align": "center",
+            "title_color": "#ffffff",
+            "typography_typography": "custom",
+            "typography_font_family": "Poppins",
+            "typography_font_size": { "unit": "px", "size": 60, "sizes": [] },
+            "typography_font_weight": "600",
+            "typography_letter_spacing": { "unit": "em", "size": -0.02, "sizes": [] },
+            "_margin": { "unit": "px", "top": "0", "right": "0", "bottom": "28", "left": "0", "isLinked": false }
+          },
+          "elements": []
+        },
+        {
+          "id": "pwr00004",
+          "elType": "widget",
+          "widgetType": "button",
+          "settings": {
+            "text": "About Us",
+            "link": { "url": "contact-parking/", "is_external": "", "nofollow": "" },
+            "align": "center",
+            "background_color": "#FFDA00",
+            "button_text_color": "#15397F",
+            "button_hover_background_color": "#e5c500",
+            "border_radius": { "unit": "px", "top": "4", "right": "4", "bottom": "4", "left": "4", "isLinked": true },
+            "typography_typography": "custom",
+            "typography_font_family": "Poppins",
+            "typography_font_size": { "unit": "px", "size": 15, "sizes": [] },
+            "typography_font_weight": "500",
+            "text_padding": { "unit": "px", "top": "14", "right": "48", "bottom": "14", "left": "48", "isLinked": false }
+          },
+          "elements": []
+        }
+      ]
+    }
+
+  ],
+  "page_settings": {}
+}
